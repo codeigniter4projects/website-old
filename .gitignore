@@ -15,3 +15,8 @@ application/logs/*
 !application/logs/index.html
 !application/logs/.htaccess
 /vendor/
+/nbproject/private/
+/nbproject/
+/.env
+/.env_remote
+/.env_local
