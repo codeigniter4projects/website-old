@@ -18,7 +18,7 @@ class Home extends BaseController
 		$this->data['biglinks'] = array(
 			array('icon'	 => 'download', 'link'	 => 'https://github.com/bcit-ci/CodeIgniter/archive/' . $this->config->stableVersion . '.zip',
 				'label'	 => 'Download', 'text'	 => 'The latest is Version ' . $this->config->stableVersion),
-			array('icon'	 => 'book', 'link'	 => '/user_guide',
+			array('icon'	 => 'book', 'link'	 => '/user_guide/index.html',
 				'label'	 => 'Read the Manual', 'text'	 => 'Clear documentation'),
 			array('icon'	 => 'user', 'link'	 => 'http://forum.codeigniter.com',
 				'label'	 => 'View the Forums', 'text'	 => 'Get Support & Discuss Things'),

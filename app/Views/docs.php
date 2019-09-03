@@ -48,7 +48,7 @@
 
 					<ul class="nav nav-pills justify-content-center">
 						<li class="nav-item" style="margin:0.5em;">
-							<a href="/user_guide/" 
+							<a href="/user_guide/index.html" 
 							   class="nav-link btn-primary" title="Read it online">
 								<i class="glyphicon glyphicon-book"></i> Online UG
 							</a>
