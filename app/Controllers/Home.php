@@ -15,38 +15,60 @@ class Home extends BaseController
 		$this->data['pagetitle'] = lang('Home.pageTitle');
 		$this->data['pagebody'] = 'welcome';
 
-		$this->data['biglinks'] = array(
-			array('icon'	 => 'download', 'link'	 => 'https://github.com/bcit-ci/CodeIgniter/archive/' . $this->config->stableVersion . '.zip',
-				'label'	 => 'Download', 'text'	 => 'The latest is Version ' . $this->config->stableVersion),
-			array('icon'	 => 'book', 'link'	 => '/user_guide/index.html',
-				'label'	 => 'Read the Manual', 'text'	 => 'Clear documentation'),
-			array('icon'	 => 'user', 'link'	 => 'http://forum.codeigniter.com',
-				'label'	 => 'View the Forums', 'text'	 => 'Get Support & Discuss Things'),
-			array('icon'	 => 'random', 'link'	 => 'https://github.com/bcit-ci/CodeIgniter',
-				'label'	 => 'On GitHub', 'text'	 => 'Fix Bugs or Add Features'),
-		);
+		// localized jumbotron
+		$this->localize('Home', 'jumboTitle');
+		$this->localize('Home', 'jumboMessage');
 
-		$this->data['features1'] = array(
-			array('icon'	 => 'star-empty', 'label'	 => 'Framework with a small footprint',
-				'text'	 => 'CodeIgniter 3 has a 2MB download, including the user guide. ' .
-				'CodeIgniter 4 is a 100MB download, plus 6MB for the user guide.'),
-			array('icon'	 => 'send', 'label'	 => 'Simple solutions over complexity',
-				'text'	 => 'CodeIgniter encourages MVC, but does not force it on you.'),
-			array('icon'	 => 'book', 'label'	 => 'Clear documentation',
-				'text'	 => 'The User Guide contains an introduction, tutorial, a number of "how to" guides, ' .
-				'and then reference documentation for the components that make up the framework.'),
-		);
+		// localized subheadings
+		$this->localize('Home', 'recent');
+		$this->localize('Home', 'threads');
+		$this->localize('Home', 'why');
 
-		$this->data['features2'] = array(
-			array('icon'	 => 'dashboard', 'label'	 => 'Exceptional performance',
-				'text'	 => 'CodeIgniter consistently outperfo'
-				. 'rms most of its competitors.'),
-			array('icon'	 => 'lock', 'label'	 => 'Strong Security',
-				'text'	 => 'We take security seriously, with built-in protection against CSRF and XSS attacks. '.
-				'Version 4 adds context-sensitive escaping and CSP'),
-			array('icon'	 => 'list-alt', 'label'	 => 'Nearly zero configuration',
-				'text'	 => ' Much of the CodeIgniter configuration is done by convention, for instance putting models in a "models" folder. There are still a number of configuration options available, through scripts in the "config" folder.'),
-		);
+		// build the localized "biglinks" 
+		$this->data['biglinks'] = [
+			['icon'	 => 'download',
+				'link'	 => 'https://github.com/bcit-ci/CodeIgniter/archive/' . $this->config->stableVersion . '.zip',
+				'label'	 => lang('Home.block1Title'),
+				'text'	 => lang('Home.block1Desc') . $this->config->stableVersion],
+			['icon'	 => 'book',
+				'link'	 => '/user_guide/index.html',
+				'label'	 => lang('Home.block2Title'),
+				'text'	 => lang('Home.block2Desc')],
+			['icon'	 => 'user',
+				'link'	 => 'http://forum.codeigniter.com',
+				'label'	 => lang('Home.block3Title'),
+				'text'	 => lang('Home.block3Desc')],
+			['icon'	 => 'random',
+				'link'	 => 'https://github.com/bcit-ci/CodeIgniter',
+				'label'	 => lang('Home.block4Title'),
+				'text'	 => lang('Home.block4Desc')],
+		];
+
+		// build the localized left-column of features
+		$this->data['features1'] = [
+			['icon'	 => 'star-empty',
+				'label'	 => lang('Home.blurb1Title'),
+				'text'	 => lang('Home.blurb1Desc')],
+			['icon'	 => 'send',
+				'label'	 => lang('Home.blurb2Title'),
+				'text'	 => lang('Home.blurb2Desc')],
+			['icon'	 => 'book',
+				'label'	 => lang('Home.blurb3Title'),
+				'text'	 => lang('Home.blurb4Desc')],
+		];
+
+		// build the localized right-column of features
+		$this->data['features2'] = [
+			['icon'	 => 'dashboard',
+				'label'	 => lang('Home.blurb4Title'),
+				'text'	 => lang('Home.blurb4Desc')],
+			['icon'	 => 'lock',
+				'label'	 => lang('Home.blurb5Title'),
+				'text'	 => lang('Home.blurb5Desc')],
+			['icon'	 => 'list-alt',
+				'label'	 => lang('Home.blurb6Title'),
+				'text'	 => lang('Home.blurb6Desc')],
+		];
 
 		// Grab our forum information
 		$this->data['news'] = $this->forum_news();

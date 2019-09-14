@@ -84,29 +84,8 @@ class BaseController extends Controller
 			$this->data['pagetitle'] = $this->data['title'];
 		$this->data['footerline'] = $this->parsedown->text(lang('Site.footerLine'));
 
-		// Massage the menubar
-		$choices = $this->config->menuChoices;
-		foreach ($choices['menudata'] as &$menuitem)
-		{
-			$menuitem['active'] = (ltrim($menuitem['link'], '/ ') == $this->realUrl) ? 'active' : '';
-			$menuitem['link'] = '/' . $this->data['locale'] . $menuitem['link'];
-			$menuitem['name'] = lang('Site.' . $menuitem['name']); // localize
-		}
-		$this->data['menubar'] = $this->parser->setData($choices, 'raw')
-				->render('theme/menubar');
-
+		$this->buildNavbars();
 		$this->data['localizer'] = $this->buildLocaleSelector();
-
-		// Massage the footer menu
-		$choices = $this->config->footerChoices;
-		foreach ($choices['menudata'] as &$menuitem)
-		{
-			$menuitem['active'] = (ltrim($menuitem['link'], '/ ') == $this->realUrl) ? 'active' : '';
-			$menuitem['link'] = '/' . $this->data['locale'] . $menuitem['link'];
-			$menuitem['name'] = lang('Site.' . $menuitem['name']); // localize
-		}
-		$this->data['footerbar'] = $this->parser->setData($choices, 'raw')
-				->render('theme/footerbar');
 
 		$this->data['content'] = $this->parser->setData($this->data, 'raw')
 				->render($this->data['pagebody']);
@@ -116,13 +95,21 @@ class BaseController extends Controller
 		$this->data['titling'] = $this->parser->setData($this->data, 'raw')
 				->render('theme/' . $layout);
 
-		// finally, build the browser page!
+		// finally, assemble the browser page!
 		$output = $this->parser->setData($this->data, 'raw')
 				->render('theme/template');
 
 		// Sends the output to the browser
 		$this->response->setBody($output);
 		$this->response->send();
+	}
+
+	/**
+	 * copy a localized message to a same-named data property for rendering
+	 */
+	protected function localize($page, $key)
+	{
+		$this->data[$key] = lang($page . '.' . $key);
 	}
 
 	/**
@@ -142,6 +129,34 @@ class BaseController extends Controller
 		}
 		return $this->parser->setData(['locales' => $menu, 'locale' => $this->data['locale']], 'raw')
 						->render('theme/localizer');
+	}
+
+	/**
+	 * Build the localized top & bottom navbars
+	 */
+	private function buildNavbars()
+	{
+		// Massage the menubar
+		$choices = $this->config->menuChoices;
+		foreach ($choices['menudata'] as &$menuitem)
+		{
+			$menuitem['active'] = (ltrim($menuitem['link'], '/ ') == $this->realUrl) ? 'active' : '';
+			$menuitem['link'] = '/' . $this->data['locale'] . $menuitem['link'];
+			$menuitem['name'] = lang('Site.' . $menuitem['name']); // localize
+		}
+		$this->data['menubar'] = $this->parser->setData($choices, 'raw')
+				->render('theme/menubar');
+
+		// Massage the footer menu
+		$choices = $this->config->footerChoices;
+		foreach ($choices['menudata'] as &$menuitem)
+		{
+			$menuitem['active'] = (ltrim($menuitem['link'], '/ ') == $this->realUrl) ? 'active' : '';
+			$menuitem['link'] = '/' . $this->data['locale'] . $menuitem['link'];
+			$menuitem['name'] = lang('Site.' . $menuitem['name']); // localize
+		}
+		$this->data['footerbar'] = $this->parser->setData($choices, 'raw')
+				->render('theme/footerbar');
 	}
 
 }

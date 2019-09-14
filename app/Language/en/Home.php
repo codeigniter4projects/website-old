@@ -8,7 +8,7 @@ return [
 	'jumboTitle'	 => 'CodeIgniter Rocks',
 	'jumboMessage'	 => 'CodeIgniter is a powerful PHP framework with a very small footprint, built for developers who need a simple and elegant toolkit to create full-featured web applications.',
 	'block1Title'	 => 'Download',
-	'block1Desc'	 => 'The latest is Version {version}',
+	'block1Desc'	 => 'The latest is Version ',
 	'block2Title'	 => 'Read the Manual',
 	'block2Desc'	 => 'Clear documentation',
 	'block3Title'	 => 'View the Forums',

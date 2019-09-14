@@ -21,7 +21,7 @@ class App extends BaseConfig
 			['name' => 'topNav5', 'link' => '/contribute']
 		]
 	];
-	// data for the footer navbar
+	// data for the footer navbar; names are localized message keys
 	public $footerChoices = [
 		'menudata' => [
 			['name' => 'bottomNav1', 'link' => '/help'],
