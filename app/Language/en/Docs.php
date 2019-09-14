@@ -58,10 +58,10 @@ EOS;
 return [
 	'title'			 => 'CodeIgniter Documentation',
 	'heading'		 => 'The primary documentation for CodeIgniter is its User Guide.',
-	'heading2'		 => 'The User Guide contains an introduction, tutorial, a number of "how to" guides, and then reference documentation for the components that make up the framework.',
-	'ci4Title'	 => 'CodeIgniter 4',
+	'subheading'	 => 'The User Guide contains an introduction, tutorial, a number of "how to" guides, and then reference documentation for the components that make up the framework.',
+	'ci4Title'		 => 'CodeIgniter 4',
 	'ci4Text'		 => $ci4DocsText,
-	'ci3Title'	 => 'CodeIgniter 3',
+	'ci3Title'		 => 'CodeIgniter 3',
 	'ci3Text'		 => $ci3DocsText,
 	'onlineButton'	 => 'Online UG',
 	'offlineButton'	 => 'Offline UG',
