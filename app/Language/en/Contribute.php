@@ -3,7 +3,7 @@
  * Contribute page messages for the CodeIgniter website
  * The text blocks use markdown format.
  */
-$introducingContribution = <<<'EOS'
+$introductionContribution = <<<'EOS'
 CodeIgniter is a community driven project and accepts contributions of code and 
 documentation from the community. These contributions are made in the form of 
 Issues or Pull Requests on the [CodeIgniter repository](https://github.com/bcit-ci/CodeIgniter) on GitHub.
@@ -19,11 +19,9 @@ Issues are a quick way to point out a bug. If you find a bug or documentation er
 Reporting issues is helpful but an even better approach is to send a Pull Request, 
 which is done by “Forking” the main repository and committing to your own copy. 
 This will require you to use the version control system called Git. 		
-   
-EOS;
-
-$introductionNote = <<<'EOS'
+  
 *Note: the two GitHub links above are for the CodeIgniter 3 repository. They will be replaced with the CodeIgniter 4 ones once it launches.*		
+
 EOS;
 
 $ci4Contributions = <<<'EOS'
@@ -40,6 +38,7 @@ Read more about [responsible disclosure](/contribute/responsible).
 EOS;
 
 $testingContributions = <<<'EOS'
+#### Testers
 We always need feedback on what works and what does not! Most of the development 
 effort is going into Version 3, so that is where the need is greatest. 
 If you find something that is definitely a bug, and you are a Github user, 
@@ -51,6 +50,8 @@ forum [Issues section](https://forum.codeigniter.com/forum-19.html)!
 EOS;
 
 $writingContributions = <<<'EOS'
+#### Writers
+   
 Every project needs good documentation! The CodeIgniter user guide is part of the 
 [Github project](https://github.com/bcit-ci/CodeIgniter) (mentioned above), 
 and there is always room for more tutorials.
@@ -59,21 +60,29 @@ CodeIgniter 4's user guide is part of its own [repository](https://github.com/co
 EOS;
 
 $evangelistContributions = <<<'EOS'
+#### Evangelists   
+	
 The word needs to be spread about good and worthy projects, which we think CodeIgniter is :) 
 You can help by being active in the forums, answering questions, and by 
 spreading the word inside your developer or user community.		
 EOS;
 
 $moderatorContributions = <<<'EOS'
+#### Moderators
+   
 The forum can always use moderators, to make sure that discussions/threads stay on topic, and to weed out the inappropriate users or comments!		
 EOS;
 
 $designerContributions = <<<'EOS'
+#### Designers
+   
 Suggestions and help with our website, User Guide, and forum design are always welcome! 
 We are working on themes for each of these, which will be shared in their own Github repository. 		
 EOS;
 
 $coderContributions = <<<'EOS'
+#### Coders
+   
 If you would like to get involved in helping to build the next version of CodeIgniter, 
 join us on [Github](https://github.com/bcit-ci/CodeIgniter)! 
 A detailed [contribution guide](http://cisite.local/userguide3/contributing/index.html) 
@@ -88,6 +97,8 @@ and its [style](https://github.com/codeigniter4/CodeIgniter4/blob/develop/contri
 EOS;
 
 $reviewerContributions = <<<'EOS'
+#### Reviewers
+   
 Every project needs a core group of developers, familiar with the project standards 
 and conventions, to review proposed enhancements and fixes. 
 We have been really fortunate with our group of reviewers so far, and hope to recruit a few more.		
@@ -98,29 +109,23 @@ return [
 	'title'				 => 'Contribute to CodeIgniter',
 	'heading'			 => 'There are many ways to contribute to the CodeIgniter project, whether you are a developer or not. ',
 	'topText'			 => $introductionContribution,
-	'topNote'			 => $introductionNote,
 	'ci4Title'			 => 'CodeIgniter 4',
 	'ci4Text'			 => $ci4Contributions,
 	'securityText'		 => $securityContributions,
 	'notcoderSection'	 => 'Not a Programmer?',
-	'testerTitle'		 => 'Testers',
-	'testerText'		 => $testerContributions,
-	'writerTitle'		 => 'Writers',
-	'writerText'		 => $writerContributions,
-	'evangelistTitle'	 => 'Evangelists',
+	'testerText'		 => $testingContributions,
+	'writerText'		 => $writingContributions,
 	'evangelistText'	 => $evangelistContributions,
-	'moderatorTitle'	 => 'Moderators',
 	'moderatorText'		 => $moderatorContributions,
-	'designerTitle'		 => 'Designers',
 	'designerText'		 => $designerContributions,
 	'coderSection'		 => 'Are You a Programmer?',
-	'coderTitle'		 => 'Coders',
 	'coderText'			 => $coderContributions,
-	'reviewerTitle'		 => 'Reviewers',
 	'reviewerText'		 => $reviewerContributions,
-	'ack1'				 => 'Acknowledging Our Top CodeIgniter 3 Contributors',
-	'ack2'				 => 'Acknowledging Our Top CodeIgniter 3 Translation Contributors',
-	'ack3'				 => 'Acknowledging Our Top CodeIgniter4 Contributors',
-	'ack4'				 => 'Acknowledging Our Top CodeIgniter 4 Translation Contributors',
-	'ack5'				 => 'Acknowledging Our Top Website Contributors',
+	'ackTitle'			 => 'Acknowledging Our Top Contributors',
+	'ack1'				 => '... CodeIgniter 3',
+	'ack2'				 => '... CodeIgniter 3 translations',
+	'ack3'				 => '... CodeIgniter4',
+	'ack4'				 => '... CodeIgniter 4 translations',
+	'ack5'				 => '... our original Website',
+	'ack6'				 => '... our revised Website (CI4)',
 ];

@@ -3,7 +3,8 @@ namespace App\Libraries;
 
 use Github;
 
-class GithubAPI {
+class GithubAPI
+{
 
 	/**
 	 * Github API Client 
@@ -41,8 +42,9 @@ class GithubAPI {
 		try
 		{
 			$info = $this->client->api('repo')->show($username, $repository);
-			return (!empty($info)) ? $info : FALSE;
-		} catch (Exception $e)
+			return ( ! empty($info)) ? $info : FALSE;
+		}
+		catch (Exception $e)
 		{
 			return FALSE;
 		}
@@ -63,8 +65,9 @@ class GithubAPI {
 		try
 		{
 			$info = $this->client->api('repo')->releases()->all($username, $repository);
-			return (!empty($info)) ? $info : FALSE;
-		} catch (Exception $e)
+			return ( ! empty($info)) ? $info : FALSE;
+		}
+		catch (Exception $e)
 		{
 			return FALSE;
 		}
@@ -84,8 +87,9 @@ class GithubAPI {
 		try
 		{
 			$info = $this->client->api('repo')->releases()->all($username, $repository);
-			return (!empty($info)) ? $info[0] : FALSE;
-		} catch (Exception $e)
+			return ( ! empty($info)) ? $info[0] : FALSE;
+		}
+		catch (Exception $e)
 		{
 			return FALSE;
 		}
@@ -106,12 +110,14 @@ class GithubAPI {
 		try
 		{
 			$info = $this->client->api('repo')->tags($username, $repository);
-			return (!empty($info)) ? $info : FALSE;
-		} catch (Exception $e)
+			return ( ! empty($info)) ? $info : FALSE;
+		}
+		catch (Exception $e)
 		{
 			return FALSE;
 		}
 	}
+
 	/**
 	 * Retrieves name & download link for latest tag.
 	 * 
@@ -126,14 +132,16 @@ class GithubAPI {
 		try
 		{
 			$info = $this->client->api('repo')->tags($username, $repository);
-			return (!empty($info)) ? $info[0] : FALSE;
-		} catch (Exception $e)
+			return ( ! empty($info)) ? $info[0] : FALSE;
+		}
+		catch (Exception $e)
 		{
 			return FALSE;
 		}
 	}
+
 	/**
-	 * Retrieves contributors information for a repository given its username and repository name
+	 * Retrieves top 12contributors information for a repository given its username and repository name
 	 *
 	 * @param string    the username
 	 * @param string	the repository name
@@ -143,9 +151,10 @@ class GithubAPI {
 	{
 		try
 		{
-			$info = $this->client->api('repo')->contributors($username, $repository);
-			return (!empty($info)) ? $info : FALSE;
-		} catch (Exception $e)
+			$info = array_slice($this->client->api('repo')->contributors($username, $repository), 0, 12);
+			return ( ! empty($info)) ? $info : FALSE;
+		}
+		catch (Exception $e)
 		{
 			return FALSE;
 		}
