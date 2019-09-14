@@ -48,6 +48,10 @@ class BaseController extends Controller
 		$this->data = array();
 		$this->data['mybb_forum_url'] = $this->config->mybbForumURL;
 		$this->errors = array();
+		$this->data['locale'] = $request->getLocale();
+
+		// URL without the locale
+		$this->realUrl = trim('/' . $this->request->uri->getSegment(2) . '/' . $this->request->uri->getSegment(3), '/ ');
 
 		helper('url');
 
@@ -73,7 +77,7 @@ class BaseController extends Controller
 	/**
 	 * Render this page
 	 */
-	function render()
+	protected function render()
 	{
 		if ( ! isset($this->data['pagetitle']))
 			$this->data['pagetitle'] = $this->data['title'];
@@ -82,36 +86,58 @@ class BaseController extends Controller
 		$choices = $this->config->menuChoices;
 		foreach ($choices['menudata'] as &$menuitem)
 		{
-			$menuitem['active'] = (ltrim($menuitem['link'], '/ ') == uri_string()) ? 'active' : '';
+			$menuitem['active'] = (ltrim($menuitem['link'], '/ ') == $this->realUrl) ? 'active' : '';
+			$menuitem['link'] = '/' . $this->data['locale'] . $menuitem['link'];
 		}
-		$this->data['menubar'] = $this->parser->setData($choices,'raw')
+		$this->data['menubar'] = $this->parser->setData($choices, 'raw')
 				->render('theme/menubar');
+
+		$this->data['localizer'] = $this->buildLocaleSelector();
 
 		// Massage the footer menu
 		$choices = $this->config->footerChoices;
 		foreach ($choices['menudata'] as &$menuitem)
 		{
-			$menuitem['active'] = (ltrim($menuitem['link'], '/ ') == uri_string()) ? 'active' : '';
+			$menuitem['active'] = (ltrim($menuitem['link'], '/ ') == $this->realUrl) ? 'active' : '';
+			$menuitem['link'] = '/' . $this->data['locale'] . $menuitem['link'];
 		}
-		$this->data['footerbar'] = $this->parser->setData($choices,'raw')
+		$this->data['footerbar'] = $this->parser->setData($choices, 'raw')
 				->render('theme/footerbar');
-		
-		$this->data['content'] = $this->parser->setData($this->data,'raw')
+
+		$this->data['content'] = $this->parser->setData($this->data, 'raw')
 				->render($this->data['pagebody']);
 
 		// title block, jumbo for the homepage
 		$layout = empty($this->data['title']) ? 'jumbotitle' : 'title';
-		$this->data['titling'] = $this->parser->setData($this->data,'raw')
+		$this->data['titling'] = $this->parser->setData($this->data, 'raw')
 				->render('theme/' . $layout);
 
 		// finally, build the browser page!
-		//$this->data['data'] = &$this->data;
-		$output = $this->parser->setData($this->data,'raw')
+		$output = $this->parser->setData($this->data, 'raw')
 				->render('theme/template');
 
 		// Sends the output to the browser
 		$this->response->setBody($output);
 		$this->response->send();
+	}
+
+	/**
+	 * Build locale selector, with links back to current page but possibly with different locale
+	 */
+	private function buildLocaleSelector()
+	{
+		$choices = $this->config->supportedLocales;
+		$menu = [];
+		foreach ($choices as $name)
+		{
+			$menuitem = [];
+			$menuitem['name'] = $name;
+			$menuitem['link'] = $name . '/' . $this->realUrl;
+			$menuitem['active'] = ($name == $this->data['locale']) ? 'active' : '';
+			$menu[] = $menuitem;
+		}
+		return $this->parser->setData(['locales' => $menu, 'locale' => $this->data['locale']], 'raw')
+						->render('theme/localizer');
 	}
 
 }

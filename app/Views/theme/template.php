@@ -22,6 +22,7 @@
 				<div class="collapse navbar-collapse justify-content-end"  id="navbarNav">
 					<ul class="navbar-nav justify-content-end nav-pills">
 						{menubar}
+						{localizer}
 					</ul>
 				</div>
 			</div>
