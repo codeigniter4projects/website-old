@@ -12,7 +12,7 @@ class Home extends BaseController
 
 
 		$this->data['title'] = '';
-		$this->data['pagetitle'] = 'CodeIgniter Web Framework';
+		$this->data['pagetitle'] = lang('Home.pageTitle');
 		$this->data['pagebody'] = 'welcome';
 
 		$this->data['biglinks'] = array(

@@ -11,22 +11,22 @@ class App extends BaseConfig
 	  |--------------------------------------------------------------------------
 	 */
 
-	// the menu basics (top navbar)
+	// the menu basics (top navbar); names are localized message keys
 	public $menuChoices = [
 		'menudata' => [
-			['name' => '<span class="glyphicon glyphicon-home"></span>', 'link' => '/home'],
-			['name' => 'Download', 'link' => '/download'],
-			['name' => 'Documentation', 'link' => '/docs'],
-			['name' => 'Community', 'link' => '/community'],
-			['name' => 'Contribute', 'link' => '/contribute']
+			['name' => 'topNav1', 'link' => '/home'],
+			['name' => 'topNav2', 'link' => '/download'],
+			['name' => 'topNav3', 'link' => '/docs'],
+			['name' => 'topNav4', 'link' => '/community'],
+			['name' => 'topNav5', 'link' => '/contribute']
 		]
 	];
 	// data for the footer navbar
 	public $footerChoices = [
 		'menudata' => [
-			['name' => 'Policies', 'link' => '/help'],
-			['name' => 'The Fine Print', 'link' => '/help/legal'],
-			['name' => 'About', 'link' => '/help/about']
+			['name' => 'bottomNav1', 'link' => '/help'],
+			['name' => 'bottomNav2', 'link' => '/help/legal'],
+			['name' => 'bottomNav3', 'link' => '/help/about']
 		]
 	];
 	public $stableVersion = '3.1.10';

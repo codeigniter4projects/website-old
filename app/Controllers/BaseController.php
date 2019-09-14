@@ -49,6 +49,7 @@ class BaseController extends Controller
 		$this->data['mybb_forum_url'] = $this->config->mybbForumURL;
 		$this->errors = array();
 		$this->data['locale'] = $request->getLocale();
+		$this->parsedown = new \Parsedown();
 
 		// URL without the locale
 		$this->realUrl = trim('/' . $this->request->uri->getSegment(2) . '/' . $this->request->uri->getSegment(3), '/ ');
@@ -81,6 +82,7 @@ class BaseController extends Controller
 	{
 		if ( ! isset($this->data['pagetitle']))
 			$this->data['pagetitle'] = $this->data['title'];
+		$this->data['footerline'] = $this->parsedown->text(lang('Site.footerLine'));
 
 		// Massage the menubar
 		$choices = $this->config->menuChoices;
@@ -88,6 +90,7 @@ class BaseController extends Controller
 		{
 			$menuitem['active'] = (ltrim($menuitem['link'], '/ ') == $this->realUrl) ? 'active' : '';
 			$menuitem['link'] = '/' . $this->data['locale'] . $menuitem['link'];
+			$menuitem['name'] = lang('Site.' . $menuitem['name']); // localize
 		}
 		$this->data['menubar'] = $this->parser->setData($choices, 'raw')
 				->render('theme/menubar');
@@ -100,6 +103,7 @@ class BaseController extends Controller
 		{
 			$menuitem['active'] = (ltrim($menuitem['link'], '/ ') == $this->realUrl) ? 'active' : '';
 			$menuitem['link'] = '/' . $this->data['locale'] . $menuitem['link'];
+			$menuitem['name'] = lang('Site.' . $menuitem['name']); // localize
 		}
 		$this->data['footerbar'] = $this->parser->setData($choices, 'raw')
 				->render('theme/footerbar');

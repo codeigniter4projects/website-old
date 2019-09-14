@@ -1,8 +1,10 @@
 <?php
 /**
  * Home page messages for the CodeIgniter website
+ * The text blocks use markdown format.
  */
 return [
+	'pageTitle'		 => 'CodeIgniter Web Framework',
 	'jumboTitle'	 => 'CodeIgniter Rocks',
 	'jumboMessage'	 => 'CodeIgniter is a powerful PHP framework with a very small footprint, built for developers who need a simple and elegant toolkit to create full-featured web applications.',
 	'block1Title'	 => 'Download',
@@ -16,7 +18,7 @@ return [
 	'recent'		 => 'Recent News',
 	'threads'		 => 'Active Forum Threads',
 	'why'			 => 'Why CodeIgniter?',
-	'blurb1Title'	 => 'Framework with a small footprint', 
+	'blurb1Title'	 => 'Framework with a small footprint',
 	'blurb1Desc'	 => 'CodeIgniter 3 has a 2MB download, including the user guide. CodeIgniter 4 is a 1.2MB download, plus 6MB for the user guide.',
 	'blurb2Title'	 => 'Simple solutions over complexity',
 	'blurb2Desc'	 => 'CodeIgniter encourages MVC, but does not force it on you.',
