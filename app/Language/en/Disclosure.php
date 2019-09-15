@@ -3,7 +3,6 @@
  * Responsible disclosure page messages for the CodeIgniter website
  * The text blocks use markdown format.
  */
-
 $responsibleDisclosure = <<<'EOS'
 If you discover a vulnerability, we would like to know about it so we can take 
 steps to address it as quickly as possible. We would like to ask you to 
@@ -35,8 +34,8 @@ EOS;
 
 
 return [
-	'title'			 => 'Responsible Disclosure',
-	'heading'		 => 'At CodeIgniter, we consider the security of our systems a top priority. ',
-	'heading2'		 => 'But no matter how much effort we put into system security, there can still be vulnerabilities present. ',
-	'theText'		 => $responsibleDisclosure
+	'title'		 => 'Responsible Disclosure',
+	'heading'	 => 'At CodeIgniter, we consider the security of our systems a top priority. ',
+	'subheading' => 'But no matter how much effort we put into system security, there can still be vulnerabilities present. ',
+	'theText'	 => $responsibleDisclosure
 ];

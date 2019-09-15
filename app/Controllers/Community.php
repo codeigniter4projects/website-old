@@ -27,25 +27,25 @@ class Community extends BaseController {
 		$this->localize('Community', 'ci3Button');
 
 		// Security block, with nested substitution
-		$original = $this->parsedown->text(lang('Community.securityText'));
+		$original = $this->parsedown->line(lang('Community.securityText'));
 		$this->data['securityText'] = $this->parser->setData($this->data, 'raw')
 				->renderString($original);
 
 		// Forum block, with nested substitution
 		$this->localize('Community', 'forumTitle');
-		$original = $this->parsedown->text(lang('Community.forumText'));
+		$original = $this->parsedown->line(lang('Community.forumText'));
 		$this->data['forumText'] = $this->parser->setData($this->data, 'raw')
 				->renderString($original);
 		
 		// Slack block, with nested substitution
 		$this->localize('Community', 'slackTitle');
-		$original = $this->parsedown->text(lang('Community.slackText'));
+		$original = $this->parsedown->line(lang('Community.slackText'));
 		$this->data['slackText'] = $this->parser->setData($this->data, 'raw')
 				->renderString($original);
 		
 		// Github block, with nested substitution
 		$this->localize('Community', 'githubTitle');
-		$original = $this->parsedown->text(lang('Community.githubText'));
+		$original = $this->parsedown->line(lang('Community.githubText'));
 		$this->data['githubText'] = $this->parser->setData($this->data, 'raw')
 				->renderString($original);
 		

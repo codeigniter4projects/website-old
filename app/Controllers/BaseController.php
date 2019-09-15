@@ -82,7 +82,7 @@ class BaseController extends Controller
 	{
 		if ( ! isset($this->data['pagetitle']))
 			$this->data['pagetitle'] = $this->data['title'];
-		$this->data['footerline'] = $this->parsedown->text(lang('Site.footerLine'));
+		$this->data['footerline'] = $this->parsedown->line(lang('Site.footerLine'));
 
 		$this->buildNavbars();
 		$this->data['localizer'] = $this->buildLocaleSelector();
