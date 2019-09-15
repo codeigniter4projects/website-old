@@ -22,6 +22,7 @@
 				<div class="collapse navbar-collapse justify-content-end"  id="navbarNav">
 					<ul class="navbar-nav justify-content-end nav-pills">
 						{menubar}
+						{localizer}
 					</ul>
 				</div>
 			</div>
@@ -48,9 +49,7 @@
 			<div class="footer-copyright">
 				<div class="container">
 					<div class="row">
-						<p class="text-center">CodeIgniter was created by <a href="http://www.ellislab.com/">EllisLab</a>, 
-							fostered by <a href="http://www.bcit.ca/cas/computing/">BCIT</a>, and will soon be a project of the CodeIgniter Foundation.
-							<a href="mailto:admin&commat;codeigniter.com"><span class="glyphicon glyphicon-envelope"></span></a></p>
+						<p class="text-center">{footerline}</p>
 					</div>
 				</div>
 			</div>
