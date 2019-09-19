@@ -83,7 +83,7 @@ class BaseController extends Controller
 		$this->data['v4link'] = $info4['zipball_url'];
 
 		$info3 = $gitter->getLatestTag('bcit-ci', 'codeigniter');
-		$this->data['v3name'] = $info3['name'];
+		$this->data['v3name'] = '3.1.11'; //$info3['name'];
 		$this->data['v3link'] = $info3['zipball_url'];
 	}
 
