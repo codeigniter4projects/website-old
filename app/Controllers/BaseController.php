@@ -53,6 +53,8 @@ class BaseController extends Controller
 
 		// URL without the locale
 		$this->realUrl = trim('/' . $this->request->uri->getSegment(2) . '/' . $this->request->uri->getSegment(3), '/ ');
+		if (empty($this->realUrl))
+			$this->realUrl = 'home';
 
 		helper('url');
 
@@ -73,6 +75,16 @@ class BaseController extends Controller
 		$this->response->setHeader('X-Frame-Options', 'DENY');
 		// prevent mime based attacks
 		$this->response->setHeader('X-Content-Type-Options', 'nosniff');
+
+		$gitter = new \App\Libraries\GithubAPI();
+
+		$info4 = $gitter->getLatestRelease('codeigniter4', 'framework');
+		$this->data['v4name'] = $info4['tag_name'];
+		$this->data['v4link'] = $info4['zipball_url'];
+
+		$info3 = $gitter->getLatestTag('bcit-ci', 'codeigniter');
+		$this->data['v3name'] = $info3['name'];
+		$this->data['v3link'] = $info3['zipball_url'];
 	}
 
 	/**

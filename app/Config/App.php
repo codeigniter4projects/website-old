@@ -29,7 +29,6 @@ class App extends BaseConfig
 			['name' => 'bottomNav3', 'link' => '/help/about']
 		]
 	];
-	public $stableVersion = '3.1.10';
 
 	/*
 	  |--------------------------------------------------------------------------
@@ -125,7 +124,7 @@ class App extends BaseConfig
 	  | found, the first locale will be used.
 	  |
 	 */
-	public $supportedLocales = ['en', 'fr'];
+	public $supportedLocales = ['en'];
 
 	/*
 	  |--------------------------------------------------------------------------

@@ -27,9 +27,9 @@ class Home extends BaseController
 		// build the localized "biglinks" 
 		$this->data['biglinks'] = [
 			['icon'	 => 'download',
-				'link'	 => 'https://github.com/bcit-ci/CodeIgniter/archive/' . $this->config->stableVersion . '.zip',
+				'link'	 => 'https://github.com/bcit-ci/CodeIgniter/archive/' . $this->data['v3name'] . '.zip',
 				'label'	 => lang('Home.block1Title'),
-				'text'	 => lang('Home.block1Desc') . $this->config->stableVersion],
+				'text'	 => lang('Home.block1Desc') . $this->data['v3name']],
 			['icon'	 => 'book',
 				'link'	 => '/user_guide/index.html',
 				'label'	 => lang('Home.block2Title'),
