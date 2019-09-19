@@ -21,18 +21,18 @@
 <!-- Recent Community Info -->
 <div class="row">
 	<div class="col-md-6">
-		<h3>Recent News</h3>
+		<h3>{recent}</h3>
 		{news}
 	</div>
 	<div class="col-md-6">
-		<h3>Active Forum Threads</h3>
+		<h3>{threads}</h3>
 		{posts}
 	</div>
 </div>
 
 <hr/>
 
-	<h2>Why CodeIgniter?</h2>
+	<h2>{why}</h2>
 	<br/>
 
 <div class="row">

@@ -48,6 +48,13 @@ class BaseController extends Controller
 		$this->data = array();
 		$this->data['mybb_forum_url'] = $this->config->mybbForumURL;
 		$this->errors = array();
+		$this->data['locale'] = $request->getLocale();
+		$this->parsedown = new \Parsedown();
+
+		// URL without the locale
+		$this->realUrl = trim('/' . $this->request->uri->getSegment(2) . '/' . $this->request->uri->getSegment(3), '/ ');
+		if (empty($this->realUrl))
+			$this->realUrl = 'home';
 
 		helper('url');
 
@@ -68,50 +75,100 @@ class BaseController extends Controller
 		$this->response->setHeader('X-Frame-Options', 'DENY');
 		// prevent mime based attacks
 		$this->response->setHeader('X-Content-Type-Options', 'nosniff');
+
+		$gitter = new \App\Libraries\GithubAPI();
+
+		$info4 = $gitter->getLatestRelease('codeigniter4', 'framework');
+		$this->data['v4name'] = $info4['tag_name'];
+		$this->data['v4link'] = $info4['zipball_url'];
+
+		$info3 = $gitter->getLatestTag('bcit-ci', 'codeigniter');
+		$this->data['v3name'] = '3.1.11'; //$info3['name'];
+		$this->data['v3link'] = $info3['zipball_url'];
 	}
 
 	/**
 	 * Render this page
 	 */
-	function render()
+	protected function render()
 	{
 		if ( ! isset($this->data['pagetitle']))
 			$this->data['pagetitle'] = $this->data['title'];
+		$this->data['footerline'] = $this->parsedown->line(lang('Site.footerLine'));
 
+		$this->buildNavbars();
+		$this->data['localizer'] = $this->buildLocaleSelector();
+
+		$this->data['content'] = $this->parser->setData($this->data, 'raw')
+				->render($this->data['pagebody']);
+
+		// title block, jumbo for the homepage
+		$layout = empty($this->data['title']) ? 'jumbotitle' : 'title';
+		$this->data['titling'] = $this->parser->setData($this->data, 'raw')
+				->render('theme/' . $layout);
+
+		// finally, assemble the browser page!
+		$output = $this->parser->setData($this->data, 'raw')
+				->render('theme/template');
+
+		// Sends the output to the browser
+		$this->response->setBody($output);
+		$this->response->send();
+	}
+
+	/**
+	 * copy a localized message to a same-named data property for rendering
+	 */
+	protected function localize($page, $key)
+	{
+		$this->data[$key] = lang($page . '.' . $key);
+	}
+
+	/**
+	 * Build locale selector, with links back to current page but possibly with different locale
+	 */
+	private function buildLocaleSelector()
+	{
+		$choices = $this->config->supportedLocales;
+		$menu = [];
+		foreach ($choices as $name)
+		{
+			$menuitem = [];
+			$menuitem['name'] = $name;
+			$menuitem['link'] = $name . '/' . $this->realUrl;
+			$menuitem['active'] = ($name == $this->data['locale']) ? 'active' : '';
+			$menu[] = $menuitem;
+		}
+		return $this->parser->setData(['locales' => $menu, 'locale' => $this->data['locale']], 'raw')
+						->render('theme/localizer');
+	}
+
+	/**
+	 * Build the localized top & bottom navbars
+	 */
+	private function buildNavbars()
+	{
 		// Massage the menubar
 		$choices = $this->config->menuChoices;
 		foreach ($choices['menudata'] as &$menuitem)
 		{
-			$menuitem['active'] = (ltrim($menuitem['link'], '/ ') == uri_string()) ? 'active' : '';
+			$menuitem['active'] = (ltrim($menuitem['link'], '/ ') == $this->realUrl) ? 'active' : '';
+			$menuitem['link'] = '/' . $this->data['locale'] . $menuitem['link'];
+			$menuitem['name'] = lang('Site.' . $menuitem['name']); // localize
 		}
-		$this->data['menubar'] = $this->parser->setData($choices,'raw')
+		$this->data['menubar'] = $this->parser->setData($choices, 'raw')
 				->render('theme/menubar');
 
 		// Massage the footer menu
 		$choices = $this->config->footerChoices;
 		foreach ($choices['menudata'] as &$menuitem)
 		{
-			$menuitem['active'] = (ltrim($menuitem['link'], '/ ') == uri_string()) ? 'active' : '';
+			$menuitem['active'] = (ltrim($menuitem['link'], '/ ') == $this->realUrl) ? 'active' : '';
+			$menuitem['link'] = '/' . $this->data['locale'] . $menuitem['link'];
+			$menuitem['name'] = lang('Site.' . $menuitem['name']); // localize
 		}
-		$this->data['footerbar'] = $this->parser->setData($choices,'raw')
+		$this->data['footerbar'] = $this->parser->setData($choices, 'raw')
 				->render('theme/footerbar');
-		
-		$this->data['content'] = $this->parser->setData($this->data,'raw')
-				->render($this->data['pagebody']);
-
-		// title block, jumbo for the homepage
-		$layout = empty($this->data['title']) ? 'jumbotitle' : 'title';
-		$this->data['titling'] = $this->parser->setData($this->data,'raw')
-				->render('theme/' . $layout);
-
-		// finally, build the browser page!
-		//$this->data['data'] = &$this->data;
-		$output = $this->parser->setData($this->data,'raw')
-				->render('theme/template');
-
-		// Sends the output to the browser
-		$this->response->setBody($output);
-		$this->response->send();
 	}
 
 }
