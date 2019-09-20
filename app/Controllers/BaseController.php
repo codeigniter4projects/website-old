@@ -142,7 +142,8 @@ class BaseController extends Controller
 			$menuitem['active'] = ($name == $this->data['locale']) ? 'active' : '';
 			$menu[] = $menuitem;
 		}
-		return $this->parser->setData(['locales' => $menu, 'locale' => $this->data['locale']], 'raw')
+		$localeData = ['zlocales' => $menu, 'locale' => $this->data['locale']];
+		return $this->parser->setData($localeData, 'raw')
 						->render('theme/localizer');
 	}
 
