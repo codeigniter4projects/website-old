@@ -75,6 +75,17 @@ $routes->setAutoRoute(true);
 $routes->get('/', 'Home::index');
 $routes->get('/user_guide/','/userguide3/');
 
+// non-localized routes
+$routes->get('home','Home::index');
+$routes->get('download','Download::index');
+$routes->get('docs','Docs::index');
+$routes->get('community','Community::index');
+$routes->get('contribute','Contribute::index');
+$routes->get('contribute/responsible','Contribute::responsible');
+$routes->get('help','Help::index');
+$routes->get('help/legal','Help::legal');
+$routes->get('help/about','Help::about');
+
 // localized routes
 $routes->get('{locale}/home','Home::index');
 $routes->get('{locale}/download','Download::index');
