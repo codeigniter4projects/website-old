@@ -110,7 +110,11 @@ class GithubAPI
 		try
 		{
 			$info = $this->client->api('repo')->tags($username, $repository);
-			return ( ! empty($info)) ? $info : FALSE;
+			$results = [];
+			foreach ($info as $key => $value)
+				if (substr($value['name'], 0, 1) !== 'v')
+					$results[] = $value;
+			return ( ! empty($results)) ? $results : FALSE;
 		}
 		catch (Exception $e)
 		{
@@ -132,7 +136,15 @@ class GithubAPI
 		try
 		{
 			$info = $this->client->api('repo')->tags($username, $repository);
-			return ( ! empty($info)) ? $info[0] : FALSE;
+			$results = [];
+			foreach ($info as $key => $value)
+			{
+				if (substr($value['name'], 0, 1) !== 'v')
+				{
+					$results[] = $value;
+				}
+			}
+			return ( ! empty($results)) ? $results[0] : FALSE;
 		}
 		catch (Exception $e)
 		{
