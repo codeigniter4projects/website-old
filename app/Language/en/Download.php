@@ -49,7 +49,7 @@ session handling and encryption. Development of this version is ongoing.
 		</a>
 	</li>
 	<li class="nav-item" style="margin:0.5em;">
-		<a href="https://github.com/bcit-ci/codeigniter3-translations/archive/latest" class="nav-link btn-primary" title="Download System Message Translations">
+		<a href="https://github.com/bcit-ci/codeigniter3-translations/archive/{v3trans}.zip" class="nav-link btn-primary" title="Download System Message Translations">
 			<i class="glyphicon glyphicon-save"></i> {translationsButton}
 		</a>
 	</li>
