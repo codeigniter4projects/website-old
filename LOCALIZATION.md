@@ -50,6 +50,11 @@ and add the translated files in the appropriate subfolder of `app/Language`,
 using the [ISO-639-1 codes](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes), 
 lowercase, to identify your locale's folder.
 
+Localization variants are provided for, as folders named with the two-letter ISO 639-1 language code in lowercase, 
+followed by the two-letter [ISO 3166 country code](https://en.wikipedia.org/wiki/ISO_3166-1) capitalized, 
+and with the two parts separated by a hyphen. 
+An example would be "en" for English, and "en-US" for the variations appropriate to the United States.
+
 If needed, update the $supportedLocales setting in `app/Config/App.php`.
 There could be conflicts if multiple people are providing contributions
 at the same time!
