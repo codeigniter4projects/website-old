@@ -15,7 +15,7 @@ CodeIgniter 4 is the upcoming version of the framework, licensed under the
 		</a>
 	</li>
 	<li class="nav-item" style="margin:0.5em;">
-		<a href="https://github.com/codeigniter4/userguide/archive/latest" class="nav-link btn-primary" title="Download the User Guide">
+		<a href="https://github.com/codeigniter4/userguide/archive/{v4name}.zip" class="nav-link btn-primary" title="Download the User Guide">
 			<i class="glyphicon glyphicon-save"></i> {offlineButton}
 		</a>
 	</li>

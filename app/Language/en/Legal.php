@@ -14,14 +14,6 @@ having been transferred from EllisLab, Inc. We supply {marksLink}
 for use in your projects, subject to the guidelines below.
 </div>
 
----
-
-<div>
-<img class="pull-left" src="/assets/images/codeigniter4logo.png" width="89" height="89"/>
-The CodeIgniter 4 logo is an unregistered mark owned by the CodeIgniter Foundation. 
-We supply {logoLink} for use in your projects, subject to the guidelines below.
-</div>
-
 ![http://creativecommons.org/licenses/by/4.0/](https://i.creativecommons.org/l/by/4.0/88x31.png)
 This work is licensed under a Creative Commons Attribution 4.0 International License.
 
