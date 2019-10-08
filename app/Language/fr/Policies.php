@@ -10,6 +10,7 @@ et ne reflètent pas nécessairement les vues des propriétaires et des administ
 En vous inscrivant sur le forum, vous acceptez de ne pas publier de messages obscènes,
 vulgaire, diffamatoire, haineux, menaçant, ou qui enfreignent les lois.
 Nous allons interdire définitivement tous les utilisateurs qui le font.
+
 Nous nous réservons le droit de supprimer, éditer ou déplacer tout message pour quelque raison que ce soit.
 EOS;
 
@@ -23,6 +24,7 @@ Le site Web n'est généralement pas restreint et vous pouvez le parcourir anony
 Toute information recueillie auprès de vous ne sera pas divulguée, conformément à la politique de la Colombie-Britannique.
 Loi sur l'accès à l'information et la protection de la vie privée (RSBC 1996, ch. 165).
 EOS;
+
 $websiteData = <<<'EOS'
 Nos serveurs collectent automatiquement les informations essentielles au fonctionnement et à la
 maintenir la sécurité du site. Les informations collectées peuvent inclure:
@@ -44,5 +46,4 @@ return [
 	'privacyText'	 => $privacyPolicy,
 	'dataTitle'		 => 'Données du site',
 	'dataText'		 => $websiteData,
-
 ];

@@ -41,3 +41,26 @@ The workflow to build a page segment has the controller extract all needed
 text from locale-specific messages; run these through the markdown processor;
 and then to pass these partially formatted results as substitution
 values to the view parser, which will provide the final HTML text for the finished page.
+
+## Localization Contributions
+
+If you want to contribute all or some of the messages for a locale,
+fork the website repo, create a feature branch for your contribution,
+and add the translated files in the appropriate subfolder of `app/Language`,
+using the [ISO-639-1 codes](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes), 
+lowercase, to identify your locale's folder.
+
+Localization variants are provided for, as folders named with the two-letter ISO 639-1 language code in lowercase, 
+followed by the two-letter [ISO 3166 country code](https://en.wikipedia.org/wiki/ISO_3166-1) capitalized, 
+and with the two parts separated by a hyphen. 
+An example would be "en" for English, and "en-US" for the variations appropriate to the United States.
+
+If needed, update the $supportedLocales setting in `app/Config/App.php`.
+There could be conflicts if multiple people are providing contributions
+at the same time!
+
+The first to contribute to a language will be tagged as the maintainer
+for that locale's messages. Messages will change or be expanded,
+and we want to keep the translations up-to-date.
+
+If a new message  is added, and not translated, it will show up in English.
