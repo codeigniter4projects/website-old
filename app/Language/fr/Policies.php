@@ -36,10 +36,8 @@ Certaines parties du site Web peuvent distribuer de petites informations
 (appelés "cookies") aux navigateurs Web, pour vous assister lorsque vous revenez à
 zones spécifiques sur le site. Si vous avez des inquiétudes concernant les cookies, vous pouvez changer
 les paramètres de votre navigateur Web pour ne pas accepter ces informations ou pour afficher des messages d’avertissement.
-
 Nous vous invitons à lire la [page principale de confidentialité] du BCIT (http://www.bcit.ca/privacy/)
 EOS;
-
 return [
 	'title'			 => 'Politiques',
 	'termsTitle'	 => 'Conditions de service',
