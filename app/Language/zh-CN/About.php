@@ -26,9 +26,9 @@ EOS;
 
 
 return [
-	'title'		 => 'About CodeIgniter',
-	'wiseTitle'	 => 'Wise Men',
-	'wiseText'	 => $wiseMenIntro,
-	'ackTitle'	 => 'Acknowledgements',
+	'标题'		 => '关于 CodeIgniter',
+	'明智的头衔'	 => '智者',
+	'智慧文本'	 => $wiseMenIntro,
+	'ackTitle'	 => '致谢',
 	'ackText'	 => $hatsOffToThese,
 ];
