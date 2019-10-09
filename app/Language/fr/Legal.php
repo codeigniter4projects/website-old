@@ -73,5 +73,5 @@ return [
 	'thirdPartyText'	 => $thirdParty,
 	'externalLinksTitle' => 'Liens vers d\'autres sites Web',
 	'externalLinksText'	 => $externalLinks,
-	'endText'			 => 'Nous vous invitons à lire la [page principale de confidentialité] du BCIT(http://www.bcit.ca/privacy/)'
+	'endText'			 => 'Nous vous invitons à lire la [page principale de confidentialité](http://www.bcit.ca/privacy/) du BCIT'
 ];
