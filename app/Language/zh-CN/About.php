@@ -26,7 +26,7 @@ EOS;
 
 
 return [
-	'Title'		 => "关于 CodeIgniter",
+	'title'		 => "关于 CodeIgniter",
 	'wiseTitle'	 => '智者',
 	'wiseText'	 => $wiseMenIntro,
 	'ackTitle'	 => '致谢',
