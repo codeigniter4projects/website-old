@@ -9,7 +9,7 @@ Si vous découvrez une vulnérabilité, nous aimerions le savoir afin que nous p
 Aidez-nous à mieux protéger nos clients et nos systèmes.
 Veuillez faire ce qui suit:
 - Envoyez vos résultats par courrier électronique à [security@codeigniter.com] (mailto: security@codeigniter.com)
-ou les signaler sur notre [page HackerOne] (https://hackerone.com/codeigniter)
+ou les signaler sur notre [Hackerone page] (https://hackerone.com/codeigniter)
 - Ne tirez pas parti de la vulnérabilité ou du problème découvert,
 par exemple en téléchargeant plus de données que nécessaire pour démontrer la
 vulnérabilité ou suppression ou modification des données d'autres personnes

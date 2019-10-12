@@ -5,7 +5,7 @@
  */
 $ci4DocsText = <<<'EOS'
 CodeIgniter 4 est la version à venir du framework, concédé sous licence
-[Licence MIT] (https://github.com/codeigniter4/CodeIgniter4/blob/develop/license.txt).
+[MIT License] (https://github.com/codeigniter4/CodeIgniter4/blob/develop/license.txt).
 <ul class="nav nav-pills justify-content-center">
 	<li class="nav-item" style="margin:0.5em;">
 		<a href="https://codeigniter4.github.io/userguide/" 
