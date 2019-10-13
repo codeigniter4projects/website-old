@@ -3,6 +3,9 @@
  * Home page messages for the CodeIgniter website
  * The text blocks use markdown format.
  */
+
+
+
 return [
 	'pageTitle'		 => 'CodeIgniter 网络框架',
 	'jumboTitle'	 => 'CodeIgniter 太棒了',

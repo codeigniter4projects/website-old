@@ -3,6 +3,9 @@
  * Docs page messages for the CodeIgniter website
  * The text blocks use markdown format.
  */
+
+
+
 $ci4DocsText = <<<'EOS'
 CodeIgniter 4 是即将发布的框架版本, 授权于[MIT License]。
 (https://github.com/codeigniter4/CodeIgniter4/blob/develop/license.txt).
