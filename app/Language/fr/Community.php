@@ -3,13 +3,13 @@
  * Community page messages for the CodeIgniter website
  * The text blocks use markdown format.
  */
-$securityPlug = <<<"EOS"
+$securityPlug = <<<'EOS'
 Les problèmes de sécurité doivent être signalés avec un courrier électronique à notre 
 [équipe de sécurité](mailto: security@codeigniter.com), plutôt 
 que d'être soulevés sur le forum ou soulevés comme un problème Github, merci!
 EOS;
 
-$forumCommunity = <<<"EOS"
+$forumCommunity = <<<'EOS'
 Notre forum a été configuré avec MyBB, avec cinq catégories principales:
 
 - Général (actualités et discussion, salons, événements et groupes d'utilisateurs régionaux)
@@ -32,7 +32,7 @@ Notre forum a été configuré avec MyBB, avec cinq catégories principales:
 </ul>
 EOS;
 
-$slackCommunity = <<<"EOS"
+$slackCommunity = <<<'EOS'
 CodeIgniter a un serveur Slack, où vous pouvez dialoguer avec d'autres membres de la communauté.
 Tout le monde peut [s'inscrire](http://codeignitersignup.ciblox.com/) pour cela :)
 
@@ -45,7 +45,7 @@ Tout le monde peut [s'inscrire](http://codeignitersignup.ciblox.com/) pour cela 
 </ul>
 EOS;
 
-$githubCommunity = <<<"EOS"
+$githubCommunity = <<<'EOS'
 L'action de développement a lieu sur Github. Voir la page de contribution pour plus de détails.
 
 ** Le référentiel Github est l'endroit où vous pouvez déposer des rapports de bogues (problèmes de github), ou
@@ -70,7 +70,7 @@ EOS;
 
 return [
 	'title'		 => 'Communauté CodeIgniter',
-	'heading'	 => 'CodeIgniter est un projet open source développé par la communauté, avec plusieurs lieux de rassemblement et d'échange d'idées pour les membres de la communauté. ',
+	'heading'	 => 'CodeIgniter est un projet open source développé par la communauté, avec plusieurs lieux de rassemblement et d\'échange d\'idées pour les membres de la communauté. ',
 	'securityText'	 => $securityPlug,
 	'team'		 => 'équipe de sécurité',
 	'forumTitle'	 => 'Forum',
