@@ -5,7 +5,8 @@
  */
 $ci4DocsText = <<<'EOS'
 CodeIgniter 4 est la version à venir du framework, concédé sous licence
-[MIT License] (https://github.com/codeigniter4/CodeIgniter4/blob/develop/license.txt).
+[MIT License](https://github.com/codeigniter4/CodeIgniter4/blob/develop/license.txt).
+
 <ul class="nav nav-pills justify-content-center">
 	<li class="nav-item" style="margin:0.5em;">
 		<a href="https://codeigniter4.github.io/userguide/" 
@@ -25,10 +26,13 @@ CodeIgniter 4 est la version à venir du framework, concédé sous licence
 		</a>
 	</li>
 </ul>
+
 EOS;
+
 $ci3DocsText = <<<'EOS'
 CodeIgniter 3 est la version actuelle du framework, concédé sous licence
-[Licence MIT] (http: //cisite.local/user_guide/license.html).
+[Licence MIT](http://cisite.local/user_guide/license.html).
+
 <ul class="nav nav-pills justify-content-center">
 	<li class="nav-item" style="margin:0.5em;">
 		<a href="/user_guide/index.html" 
@@ -48,7 +52,9 @@ CodeIgniter 3 est la version actuelle du framework, concédé sous licence
 		</a>
 	</li>
 </ul>
+
 EOS;
+
 return [
 	'title'			 => 'Documentation CodeIgniter',
 	'heading'		 => 'La documentation principale de CodeIgniter est son Guide de l\'utilisateur',
