@@ -7,9 +7,11 @@ $responsibleDisclosure = <<<'EOS'
 Si vous découvrez une vulnérabilité, nous aimerions le savoir afin que nous puissions prendre
 étapes pour y remédier le plus rapidement possible. Nous aimerions vous demander de
 Aidez-nous à mieux protéger nos clients et nos systèmes.
+
 Veuillez faire ce qui suit:
-- Envoyez vos résultats par courrier électronique à [security@codeigniter.com] (mailto: security@codeigniter.com)
-ou les signaler sur notre [Hackerone page] (https://hackerone.com/codeigniter)
+
+- Envoyez vos résultats par courrier électronique à [security@codeigniter.com](mailto:security@codeigniter.com)
+ou les signaler sur notre [HackerOne page](https://hackerone.com/codeigniter)
 - Ne tirez pas parti de la vulnérabilité ou du problème découvert,
 par exemple en téléchargeant plus de données que nécessaire pour démontrer la
 vulnérabilité ou suppression ou modification des données d'autres personnes
@@ -18,11 +20,14 @@ vulnérabilité ou suppression ou modification des données d'autres personnes
 service, spam ou applications de tiers, et
 - Fournissez suffisamment d’informations pour reproduire le problème afin que nous puissions
 pour le résoudre le plus rapidement possible. Des vulnérabilités complexes peuvent nécessiter des explications supplémentaires.
+
 Ce que nous promettons:
+
 - Si vous avez suivi les instructions ci-dessus, nous n'engagerons aucune procédure judiciaire à votre encontre en ce qui concerne le rapport.
 - Nous traiterons votre rapport avec la plus stricte confidentialité et ne transmettrons pas vos données personnelles à des tiers sans votre autorisation.
 - Nous vous tiendrons informés des progrès accomplis dans la résolution du problème, et
 - Le cas échéant, nous sommes heureux de remercier ceux qui trouvent ou résolvent des problèmes de sécurité.
+
 Nous nous efforçons de résoudre tous les problèmes le plus rapidement possible et, le cas échéant, nous
 souhaite jouer un rôle dans la publication du problème une fois celui-ci résolu. 
 EOS;
