@@ -5,7 +5,7 @@
  */
 $securityPlug = <<<'EOS'
 Les problèmes de sécurité doivent être signalés avec un courrier électronique à notre 
-[security team](mailto: security@codeigniter.com), plutôt 
+[équipe de sécurité](mailto: security@codeigniter.com), plutôt 
 que d'être soulevés sur le forum ou soulevés comme un problème Github, merci!
 EOS;
 
@@ -34,7 +34,7 @@ EOS;
 
 $slackCommunity = <<<'EOS'
 CodeIgniter a un serveur Slack, où vous pouvez dialoguer avec d'autres membres de la communauté.
-Tout le monde peut [s'inscrire] (http://codeignitersignup.ciblox.com/) pour cela :)
+Tout le monde peut [s'inscrire](http://codeignitersignup.ciblox.com/) pour cela :)
 
 
 <ul class="nav nav-pills justify-content-center">
@@ -69,18 +69,18 @@ souvent lié à des versions spécifiques
 EOS;
 
 return [
-	'title'			 => 'Communauté CodeIgniter',
-	'heading'		 => 'CodeIgniter est un projet open source développé par la communauté, avec plusieurs lieux de rassemblement et d'échange d'idées pour les membres de la communauté. ',
+	'title'		 => 'Communauté CodeIgniter',
+	'heading'	 => 'CodeIgniter est un projet open source développé par la communauté, avec plusieurs lieux de rassemblement et d'échange d'idées pour les membres de la communauté. ',
 	'securityText'	 => $securityPlug,
-	'team'			 => 'équipe de sécurité',
+	'team'		 => 'équipe de sécurité',
 	'forumTitle'	 => 'Forum',
-	'forumText'		 => $forumCommunity,
+	'forumText'	 => $forumCommunity,
 	'slackTitle'	 => 'Slack',
-	'slackText'		 => $slackCommunity,
+	'slackText'	 => $slackCommunity,
 	'githubTitle'	 => 'Github',
 	'githubText'	 => $githubCommunity,
 	'forumButton'	 => 'Visiter le forum',
 	'slackButton'	 => 'Visitez Slack',
-	'ci4Button'		 => 'CodeIgniter 4',
-	'ci3Button'		 => 'CodeIgniter 3',
+	'ci4Button'	 => 'CodeIgniter 4',
+	'ci3Button'	 => 'CodeIgniter 3',
 ];
