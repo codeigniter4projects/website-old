@@ -14,7 +14,7 @@ of the User Guide, to choose from several different ways you can install the fra
 
 <ul class="nav nav-pills justify-content-center">
 	<li class="nav-item" style="margin:0.5em;">
-		<a href="{v4link}" class="nav-link btn-success" title="Download the latest version">
+		<a href="http://github.com/codeigniter4/CodeIgniter4/archive/{v4name}.zip" class="nav-link btn-success" title="Download the latest version">
 			<i class="glyphicon glyphicon-save"></i> {downloadButton}
 		</a>
 	</li>
