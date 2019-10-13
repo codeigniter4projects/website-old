@@ -124,7 +124,7 @@ class App extends BaseConfig
 	  | found, the first locale will be used.
 	  |
 	 */
-	public $supportedLocales = ['en', 'vn'];
+	public $supportedLocales = ['en', 'en-CA', 'fr', 'ja', 'vn', 'zh-CN', 'ru'];
 
 	/*
 	  |--------------------------------------------------------------------------
