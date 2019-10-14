@@ -70,7 +70,7 @@ EOS;
 
 return [
 	'title'		 => 'Communauté CodeIgniter',
-	'heading'	 => 'CodeIgniter est un projet open source développé par la communauté, avec plusieurs lieux de rassemblement et d'échange d'idées pour les membres de la communauté. ',
+	'heading'	 => 'CodeIgniter est un projet open source développé par la communauté, avec plusieurs lieux de rassemblement et d\'échange d\'idées pour les membres de la communauté. ',
 	'securityText'	 => $securityPlug,
 	'team'		 => 'équipe de sécurité',
 	'forumTitle'	 => 'Forum',
