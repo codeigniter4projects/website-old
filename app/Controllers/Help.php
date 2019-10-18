@@ -136,10 +136,6 @@ class Help extends BaseController
 		$this->data['externalLinksText'] = $this->parser->setData($this->data, 'raw')
 				->renderString($original);
 
-		$original = $this->parsedown->text(lang('Legal.endText'));
-		$this->data['endText'] = $this->parser->setData($this->data, 'raw')
-				->renderString($original);
-
 		$this->render();
 	}
 
