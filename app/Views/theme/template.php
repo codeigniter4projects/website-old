@@ -9,13 +9,14 @@
 		<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="/assets/css/style.css"/>
 		<link rel="stylesheet" type="text/css" href="/assets/github-buttons/style.css"/>
-		<title>{pagetitle}</title>
+<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Raleway" />
+<title>{pagetitle}</title>
 	</head>
     <body>
 
 		<nav class="navbar navbar-expand-lg fixed-top navbar-dark nav-pills" id="mainnav" role="navigation" style="background-color: #dd4814;">
 			<div class="container">
-				<a class="navbar-brand" href="/">CodeIgniter</a>
+				<a class="navbar-brand" href="/">Code<strong>Igniter</strong></a>
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
 				</button>			
