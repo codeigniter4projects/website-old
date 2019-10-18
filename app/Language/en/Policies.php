@@ -36,8 +36,6 @@ Some portions of the website may distribute small pieces of information
 (called "cookies") to web browsers, to assist you when you return to 
 specific areas on the site. If you have concerns about cookies, you can change 
 your web browser settings not to accept this information, or to display warning messages.
-
-We invite you to read BCIT's [main privacy page](http://www.bcit.ca/privacy/)
 EOS;
 
 return [

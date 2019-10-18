@@ -10,8 +10,5 @@
 
 	<h2 class="text-info">{externalLinksTitle}</h2>
 	{externalLinksText}
-	
-	<br/>
-	{endText}
 
 </div>
