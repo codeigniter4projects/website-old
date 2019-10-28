@@ -4,8 +4,8 @@
  * The text blocks use markdown format.
  */
 $trademarks = <<<'EOS'
-CodeIgniter® est une marque déposée du British Columbia Institute of Technology (BCIT),
-ayant été transféré d'EllisLab, Inc en 2014.	
+CodeIgniter® est une marque déposée de la Fondation CodeIgniter,
+ayant été transférée depuis la BCIT, en 2019.	
 
 <div>
 <img class="pull-left" src="/assets/images/tl-ci.gif"/>

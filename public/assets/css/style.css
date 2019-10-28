@@ -55,9 +55,8 @@ body {
 #mainnav .nav-pills > li {
     color: #5B5B5D;
     border-radius: 5px;
-    padding: 0px 0.5em 0px 0.5em;
+    padding: 1rem;
     background-color: #dd4814;
-    margin: -0.5em 0.5em -0.5em 0px;
 }
 #mainnav .nav-pills  > .nav-item:hover {
     color: white;
