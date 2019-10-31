@@ -5,7 +5,7 @@
  */
 $securityPlug = <<<'EOS'
 フォーラムやGithubではなく、[セキュリティチーム]
-（mailto：security@codeigniter.com）にメールで
+(mailto：security@codeigniter.com)にメールで
 セキュリティの問題を報告してください。	
 EOS;
 
@@ -29,7 +29,7 @@ EOS;
 
 $slackCommunity = <<<'EOS'
 CodeIgniterにはSlackチャンネルがあり、コミュニティのメンバーと交流できます。
-誰でも[サインアップ]（http://codeignitersignup.ciblox.com/）できます :)
+誰でも[サインアップ](http://codeignitersignup.ciblox.com/)できます :)
 
 <ul class="nav nav-pills justify-content-center">
 	<li class="nav-item" style="margin:0.5em;">
