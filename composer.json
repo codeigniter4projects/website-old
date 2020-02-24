@@ -6,7 +6,7 @@
     "license": "MIT",
     "require": {
         "php": ">=7.2",
-        "codeigniter4/framework": "^4@rc",
+        "codeigniter4/framework": "^4.0.1",
         "knplabs/github-api": "~1.5",
         "erusev/parsedown": "dev-master"
     },
