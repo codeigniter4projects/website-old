@@ -4,7 +4,7 @@
  * The text blocks use markdown format.
  */
 $ci4DocsText = <<<'EOS'
-CodeIgniter 4 is the upcoming version of the framework, licensed under the 
+CodeIgniter 4 is the current version of the framework, licensed under the 
 [MIT License](https://github.com/codeigniter4/CodeIgniter4/blob/develop/license.txt).
 
 <ul class="nav nav-pills justify-content-center">
@@ -30,7 +30,7 @@ CodeIgniter 4 is the upcoming version of the framework, licensed under the
 EOS;
 
 $ci3DocsText = <<<'EOS'
-CodeIgniter 3 is the current version of the framework, licensed under the 
+CodeIgniter 3 is the old version of the framework, licensed under the 
 [MIT License](http://cisite.local/user_guide/license.html).
 
 <ul class="nav nav-pills justify-content-center">

@@ -57,7 +57,7 @@ EOS;
 $externalLinks = <<<'EOS'
 The CodeIgniter Foundation makes no representations whatsoever about any 
 other websites which you may access from here. When you access an external website, 
-please understand that it is independent from the BCIT website and from this 
+please understand that it is independent from the CodeIgniter Foundation website and from this 
 website, and that we has no control over the content on that website. A link to 
 an external site does not mean that the CodeIgniter Foundation endorses 
 or accepts any responsibility for the content or use of such website.

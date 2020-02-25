@@ -4,7 +4,7 @@
  * The text blocks use markdown format.
  */
 $ci4DownloadText = <<<'EOS'
-CodeIgniter 4 is the upcoming version of the framework, intended for use with PHP7.2.
+CodeIgniter 4 is the current version of the framework, intended for use with PHP 7.2.
 
 Development is underway, and the current version is {v4name}.
 
@@ -79,7 +79,7 @@ EOS;
 
 return [
 	'title'				 => 'Download CodeIgniter',
-	'heading'			 => 'CodeIgniter comes in three flavors: CodeIgniter 3 (current), CodeIgniter 4 (future) and CodeIgniter 2 (legacy)',
+	'heading'			 => 'CodeIgniter comes in three flavors: CodeIgniter 4 (current), CodeIgniter 3 (old) and CodeIgniter 2 (legacy)',
 	'ci4Title'		 => 'CodeIgniter 4',
 	'ci4Text'			 => $ci4DownloadText,
 	'ci3Title'		 => 'CodeIgniter 3',

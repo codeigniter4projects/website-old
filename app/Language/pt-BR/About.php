@@ -29,7 +29,7 @@ para melhorar o design e a usabilidade do site ou que relataram vulnerabilidades
 EOS;
 
 return [
-	'title'		 => 'Sobre CodeIgniter',
+	'title'		 => 'Sobre o CodeIgniter',
 	'wiseTitle'	 => 'Homem Sábio',
 	'wiseText'	 => $wiseMenIntro,
 	'ackTitle'	 => 'Reconhecimentos',

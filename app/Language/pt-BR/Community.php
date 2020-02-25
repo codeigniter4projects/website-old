@@ -12,13 +12,13 @@ EOS;
 $forumCommunity = <<<'EOS'
 Nosso fórum foi configurado usando o MyBB, com cinco categorias principais:
 
-- General (news & discussion, lounge, events, e regional user groups)
-- Using CodeIgniter (choosing CodeIgniter, installation & setup, model-view-controller, libraries & helpers, best practices, e general help)
-- CodeIgniter 4 (Roadmap, Development, feature requests, support, discussion)
-- Development (CodeIgniter 3.x, CodeIgniter 2.x, e issues)
-- External Resources (addins, jobs, learn more, e spotlight)
+- General (notícias e discussões, lounge, eventos e grupos regionais de usuários)
+- Using CodeIgniter (iniciando com o CodeIgniter, instalação e configuração, model-view-controller, bibliotecas e helpers, boas práticas e ajuda geral)
+- CodeIgniter 4 (Roadmap, Desenvolvimento, novas funcionalidades, suporte, discussões)
+- Development (CodeIgniter 3.x, CodeIgniter 2.x e problemas)
+- External Resources (addins, empregos, saiba mais e destaques)
 
-**O fórum é onde você pode pedir ajuda ou discutir problemas que você está tendo com o framework.**
+**O fórum é onde você pode pedir ajuda ou discutir problemas que está tendo com o framework.**
 
 <ul class="nav nav-pills justify-content-center">
 	<li class="nav-item" style="margin:0.5em;">
@@ -28,8 +28,8 @@ Nosso fórum foi configurado usando o MyBB, com cinco categorias principais:
 EOS;
 
 $slackCommunity = <<<'EOS'
-O CodeIgniter possui um canal do Slack, onde você pode interagir com outros membros da comunidade.
-Qualquer um pode [inscrever-se](http://codeignitersignup.ciblox.com/) nele :)
+O CodeIgniter possui um canal no Slack onde você pode interagir com outros membros da comunidade.
+Qualquer um pode [se inscrever](http://codeignitersignup.ciblox.com/) nele :)
 
 <ul class="nav nav-pills justify-content-center">
 	<li class="nav-item" style="margin:0.5em;">
@@ -40,14 +40,14 @@ Qualquer um pode [inscrever-se](http://codeignitersignup.ciblox.com/) nele :)
 EOS;
 
 $githubCommunity = <<<'EOS'
-A ação de desenvolvimento ocorre no Github. Veja a página de contribuição para mais detalhes.
+O desenvolvimento ocorre no Github. Veja a página de contribuição para mais detalhes.
 
-**O repositório do Github é onde você pode registrar relatórios de erros (issues do github) ou
-onde você pode enviar solicitações pull de aprimoramentos ou correções no framework.
+**O repositório do Github é onde você pode registrar relatórios de erros (issues do GitHub) ou
+onde você pode enviar pull requests de melhorias ou correções no framework.
 O Github *não é* para suporte ou ajuda... use o fórum.**
 
-As issues do Github também são usadas para rastrear aprimoramentos planejados e aprovados,
-frequentemente vinculados a lançamentos específicos..
+As issues do Github também são usadas para rastrear melhorias planejadas e aprovadas,
+frequentemente vinculadas a lançamentos específicos.
 
 <ul class="nav nav-pills justify-content-center">
 	<li class="nav-item" style="margin:0.5em;">
@@ -70,10 +70,10 @@ return [
 	'forumText'		 => $forumCommunity,
 	'slackTitle'	 => 'Slack',
 	'slackText'		 => $slackCommunity,
-	'githubTitle'	 => 'Github',
+	'githubTitle'	 => 'GitHub',
 	'githubText'	 => $githubCommunity,
 	'forumButton'	 => 'Visite o fórum',
-	'slackButton'	 => 'Visite Slack',
+	'slackButton'	 => 'Visite o Slack',
 	'ci4Button'		 => 'CodeIgniter 4',
 	'ci3Button'		 => 'CodeIgniter 3',
 ];

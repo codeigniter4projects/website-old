@@ -4,13 +4,13 @@
  * The text blocks use markdown format.
  */
 $trademarks = <<<'EOS'
-CodeIgniter® é uma marca registrada do British Columbia Institute of Technology (BCIT),
-sendo transferido da EllisLab, Inc em 2014.
+CodeIgniter® é uma marca registrada da CodeIgniter Foundation,
+sendo transferido da BCIT em 2019.
 
 <div>
 <img class="pull-left" src="/assets/images/tl-ci.gif"/>
-O logotipo do CodeIgniter é uma marca não registrada de propriedade do BCIT,
-transferidos da EllisLab, Inc. Fornecemos {marksLink}
+O logotipo do CodeIgniter é uma marca não registrada de propriedade da CodeIgniter Foundation,
+transferidos da BCIT. Fornecemos {marksLink}
 para uso em seus projetos, sujeito às diretrizes abaixo.
 </div>
 
@@ -23,13 +23,13 @@ BCIT e BRITISH COLUMBIA INSTITUTE OF TECHNOLOGY e as marcas distintivas
 EOS;
 
 $logoGuidelines = <<<'EOS'
-Você pode usar o logotipo CodeIgniter em seu projeto, desde que você ...
+Você pode usar o logotipo CodeIgniter em seu projeto, desde que você:
 
-- Não faça uso não autorizado ou confuso da marca registrada CodeIgniter ou de uma variação dela, incluindo a impressão de que o BCIT patrocina ou endossa seu site, produtos ou serviços.
+- Não faça uso não autorizado ou confuso da marca registrada CodeIgniter ou de uma variação dela, incluindo a impressão de que a CodeIgniter Foundation patrocina ou endossa seu site, produtos ou serviços.
 - Use o símbolo de registro de marca ® quando usar a marca registrada CodeIgniter.
 - Use letras maiúsculas e negrito ou itálico para distinguir a marca registrada do CodeIgniter do texto ao seu redor.
-- Coloque uma legenda visível pelo menos uma vez nas páginas da Web usando a marca comercial CodeIgniter e na página de título de qualquer documentação ou literatura de vendas com a marca registrada CodeIgniter.Um exemplo de uma legenda aceitável é: "A marca CodeIgniter pertence e pode ser registrada pelo BCIT".
-- coloque um aviso claramente pelo menos uma vez em páginas da Web que usam a marca registrada CodeIgniter e na página de título de qualquer documentação ou literatura de vendas que ostente a marca registrada CodeIgniter. Um exemplo de isenção de responsabilidade aceitável é: "\_________ é um independente \_________ e não foi autorizado, patrocinado ou aprovado pelo BCIT."
+- Coloque uma legenda visível pelo menos uma vez nas páginas da Web usando a marca comercial CodeIgniter e na página de título de qualquer documentação ou literatura de vendas com a marca registrada CodeIgniter. Um exemplo de uma legenda aceitável é: "A marca CodeIgniter pertence e pode ser registrada pela CodeIgniter Foundation".
+- coloque um aviso claro pelo menos uma vez em páginas da Web que usam a marca registrada CodeIgniter e na página de título de qualquer documentação ou literatura de vendas que ostente a marca registrada CodeIgniter. Um exemplo de isenção de responsabilidade aceitável é: "\_________ é um independente \_________ e não foi autorizado, patrocinado ou aprovado pela CodeIgniter Foundation."
 	[Em cada caso, preencha o espaço em branco com o nome e o tipo do seu produto.]
 - Não altere a ortografia, faça outras alterações na marca comercial do CodeIgniter ou combine a marca comercial do CodeIgniter com qualquer outra marca comercial, termo ou designação.
 - Use a marca registrada CodeIgniter apenas em conexão com produtos e serviços diretamente relacionados ao CodeIgniter ou serviços associados a essa marca registrada.
@@ -43,10 +43,10 @@ A menção de empresas e produtos de terceiros neste site é apenas para fins in
 EOS;
 
 $externalLinks = <<<'EOS'
-O BCIT e a CodeIgniter Foundation não fazem nenhuma representação sobre qualquer
+A CodeIgniter Foundation não faz nenhuma representação sobre qualquer
 outros sites que você pode acessar a partir daqui. Quando você acessa um site externo,
-por favor, entenda que é independente do site do BCIT e deste
-site e que não temos controle sobre o conteúdo desse site. Um link para um site que não seja do BCIT não significa que o BCIT ou a CodeIgniter Foundation endossem ou aceitem qualquer responsabilidade pelo conteúdo ou uso desse site.
+por favor, entenda que é independente do site da CodeIgniter Foundation e deste
+site e que não temos controle sobre o conteúdo desse site. Um link para um site que não seja da CodeIgniter Foundation não significa que a CodeIgniter Foundation endossa ou aceita qualquer responsabilidade pelo conteúdo ou uso desse site.
 EOS;
 
 return [
@@ -61,5 +61,5 @@ return [
 	'thirdPartyText'	 => $thirdParty,
 	'externalLinksTitle' => 'Links para Outros Web Sites',
 	'externalLinksText'	 => $externalLinks,
-	'endText'			 => 'Nós lhe convidamos para ler BCIT\'s [página principal de privacidade](http://www.bcit.ca/privacy/)'
+	'endText'			 => 'FORA DE USO'
 ];

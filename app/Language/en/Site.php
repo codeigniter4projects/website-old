@@ -6,7 +6,7 @@
 $footerLine = <<<'EOS'
 CodeIgniter was created by [EllisLab](http://www.ellislab.com/), 
 fostered by [BCIT](http://www.bcit.ca/cas/computing/), 
-and is a project of the CodeIgniter Foundation.
+and now is a project of the CodeIgniter Foundation.
 [<span class="glyphicon glyphicon-envelope"></span>](mailto:admin@codeigniter.com)
 EOS;
 
