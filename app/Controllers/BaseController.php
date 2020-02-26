@@ -8,9 +8,9 @@ namespace App\Controllers;
  * and performing functions that are needed by all your controllers.
  * Extend this class in any new controllers:
  *     class Home extends BaseController
- * 
+ *
  * For security be sure to declare any new methods as protected or private.
- * 
+ *
  * @package CodeIgniter
  */
 use CodeIgniter\Controller;
@@ -23,7 +23,7 @@ use Psr\Log\LoggerInterface;
 class BaseController extends Controller
 {
 
-	protected $data = array(); // parameters for view components
+	protected $data = []; // parameters for view components
 	protected $id;   // identifier for our content
 
 	/**
@@ -44,24 +44,16 @@ class BaseController extends Controller
 		// Do Not Edit This Line
 		parent::initController($request, $response, $logger);
 
-		$this->config = new \Config\App();
-		$this->data = array();
+		$this->data = [];
+		$this->config = config('App');
 		$this->data['mybb_forum_url'] = $this->config->mybbForumURL;
-		$this->errors = array();
-		$this->data['locale'] = $request->getLocale();
+		$this->errors = [];
 		$this->parsedown = new \Parsedown();
 
 		// URL without the locale
 		$this->realUrl = trim('/' . $this->request->uri->getSegment(2) . '/' . $this->request->uri->getSegment(3), '/ ');
 		if (empty($this->realUrl))
 			$this->realUrl = 'home';
-
-		helper('url');
-
-		$this->parser = Services::parser();
-		$this->cache = Services::cache();
-
-		$this->response = new Response($this->config);
 
 		$this->response->setStatusCode(Response::HTTP_OK);
 		$this->response->setHeader('Content-type', 'text/html');
@@ -82,7 +74,7 @@ class BaseController extends Controller
 		$this->data['v4name'] = $info4['tag_name'];
 		$this->data['v4link'] = $info4['zipball_url'];
 
-		$info3 = $gitter->getLatestTag('bcit-ci', 'codeigniter');
+		$info3 = $gitter->getLatestTag('bcit-ci', 'CodeIgniter');
 		$this->data['v3name'] = $info3['name'];
 		$this->data['v3link'] = $info3['zipball_url'];
 
@@ -90,33 +82,30 @@ class BaseController extends Controller
 		$this->data['v3trans'] = $info5['tag_name'];
 	}
 
-	/**
-	 * Render this page
-	 */
-	protected function render()
+    /**
+     * Render this page
+     *
+     * @param string $view The view file to render
+     * @param array  $data
+     */
+	protected function render(string $view, array $data = [])
 	{
-		if ( ! isset($this->data['pagetitle']))
-			$this->data['pagetitle'] = $this->data['title'];
-		$this->data['footerline'] = $this->parsedown->line(lang('Site.footerLine'));
+        $this->buildNavbars();
+	    $data = array_merge($data, $this->data);
 
-		$this->buildNavbars();
-		$this->data['localizer'] = $this->buildLocaleSelector();
+		if ( ! isset($data['pagetitle']))
+        {
+            $data['pagetitle'] = $data['title'];
+        }
 
-		$this->data['content'] = $this->parser->setData($this->data, 'raw')
-				->render($this->data['pagebody']);
+		$data['footerline'] = $this->parsedown->line(lang('Site.footerLine'));
 
 		// title block, jumbo for the homepage
-		$layout = empty($this->data['title']) ? 'jumbotitle' : 'title';
-		$this->data['titling'] = $this->parser->setData($this->data, 'raw')
-				->render('theme/' . $layout);
+//		$layout = empty($this->data['title']) ? 'jumbotitle' : 'title';
+//		$this->data['titling'] = view('theme/' . $layout, $this->data);
 
 		// finally, assemble the browser page!
-		$output = $this->parser->setData($this->data, 'raw')
-				->render('theme/template');
-
-		// Sends the output to the browser
-		$this->response->setBody($output);
-		$this->response->send();
+		echo view($view, $data);
 	}
 
 	/**
@@ -125,26 +114,6 @@ class BaseController extends Controller
 	protected function localize($page, $key)
 	{
 		$this->data[$key] = lang($page . '.' . $key);
-	}
-
-	/**
-	 * Build locale selector, with links back to current page but possibly with different locale
-	 */
-	private function buildLocaleSelector()
-	{
-		$choices = $this->config->supportedLocales;
-		$menu = [];
-		foreach ($choices as $name)
-		{
-			$menuitem = [];
-			$menuitem['name'] = $name;
-			$menuitem['link'] = $name . '/' . $this->realUrl;
-			$menuitem['active'] = ($name == $this->data['locale']) ? 'active' : '';
-			$menu[] = $menuitem;
-		}
-		$localeData = ['zlocales' => $menu, 'locale' => $this->data['locale']];
-		return $this->parser->setData($localeData, 'raw')
-						->render('theme/localizer');
 	}
 
 	/**
@@ -157,22 +126,20 @@ class BaseController extends Controller
 		foreach ($choices['menudata'] as &$menuitem)
 		{
 			$menuitem['active'] = (ltrim($menuitem['link'], '/ ') == $this->realUrl) ? 'active' : '';
-			$menuitem['link'] = '/' . $this->data['locale'] . $menuitem['link'];
+			$menuitem['link'] = $menuitem['link'];
 			$menuitem['name'] = lang('Site.' . $menuitem['name']); // localize
 		}
-		$this->data['menubar'] = $this->parser->setData($choices, 'raw')
-				->render('theme/menubar');
+		$this->data['menubar'] = view('theme/menubar', $choices);
 
 		// Massage the footer menu
 		$choices = $this->config->footerChoices;
 		foreach ($choices['menudata'] as &$menuitem)
 		{
 			$menuitem['active'] = (ltrim($menuitem['link'], '/ ') == $this->realUrl) ? 'active' : '';
-			$menuitem['link'] = '/' . $this->data['locale'] . $menuitem['link'];
+			$menuitem['link'] = $menuitem['link'];
 			$menuitem['name'] = lang('Site.' . $menuitem['name']); // localize
 		}
-		$this->data['footerbar'] = $this->parser->setData($choices, 'raw')
-				->render('theme/footerbar');
+		$this->data['footerbar'] = view('theme/footerbar', $choices);
 	}
 
 }

@@ -1,10 +1,10 @@
-{posts}
+<?php foreach($posts as $post) : ?>
 <div class="newsitem">
-	<div class="date">{lastpost}</div>
+	<div class="date"><?= esc($post['lastpost']) ?></div>
 	<p>
-		<a href="{mybb_forum_url}/thread-{tid}-lastpost.html">
-			{subject}
+		<a href="<?= esc($post['mybb_forum_url'], 'attr') ?>/thread-<?= esc($post['tid'], 'attr') ?>-lastpost.html">
+			<?= esc($post['subject']) ?>
 		</a>
 	</p>
 </div>
-{/posts}
+<?php endforeach ?>

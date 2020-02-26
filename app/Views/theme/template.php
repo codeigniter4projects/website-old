@@ -10,7 +10,7 @@
 		<link rel="stylesheet" type="text/css" href="/assets/css/style.css"/>
 		<link rel="stylesheet" type="text/css" href="/assets/github-buttons/style.css"/>
 <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Raleway" />
-<title>{pagetitle}</title>
+<title><?= $pagetitle ?></title>
 	</head>
     <body>
 
@@ -19,21 +19,24 @@
 				<a class="navbar-brand" href="/">Code<strong>Igniter</strong></a>
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
-				</button>			
+				</button>
 				<div class="collapse navbar-collapse justify-content-end"  id="navbarNav">
 					<ul class="navbar-nav justify-content-end nav-pills">
-						{menubar}
-						{localizer}
+                        <?= $menubar ?>
 					</ul>
 				</div>
 			</div>
 		</nav>
 
-		{titling}
+		<?php if(empty($title)) : ?>
+            <?= $this->include('theme/jumbotitle') ?>
+        <?php else : ?>
+            <?= $this->include('theme/title') ?>
+        <?php endif ?>
 
 		<div id="content">
 			<div class="container">
-				{content}
+                <?= $this->renderSection('content') ?>
 			</div>
 		</div>
 
@@ -42,7 +45,7 @@
 				<div class="container">
 					<div class="row">
 						<ul class="nav nav-pills">
-							{footerbar}
+							<?= $footerbar ?>
 						</ul>
 					</div>
 				</div>
@@ -50,7 +53,10 @@
 			<div class="footer-copyright">
 				<div class="container">
 					<div class="row">
-						<p class="text-center">{footerline}</p>
+						<p class="text-center">CodeIgniter was created by [EllisLab](http://www.ellislab.com/),
+                            fostered by [BCIT](http://www.bcit.ca/cas/computing/),
+                            and is a project of the CodeIgniter Foundation.
+                            [<span class="glyphicon glyphicon-envelope"></span>](mailto:admin@codeigniter.com)</p>
 					</div>
 				</div>
 			</div>

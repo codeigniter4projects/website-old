@@ -41,6 +41,7 @@ class App extends BaseConfig
 	public $mybbNewsForum_id = 2;
 	public $mybbNewsUsernames = ['ciadmin', 'jlp', 'kilishan', 'Narf'];
 	public $mybbForumURL = 'https://forum.codeigniter.com';
+
 	/*
 	  |--------------------------------------------------------------------------
 	  | Base Site URL
