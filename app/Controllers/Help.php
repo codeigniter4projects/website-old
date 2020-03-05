@@ -93,38 +93,9 @@ class Help extends BaseController
      */
     public function legal()
     {
-        $this->data['title'] = lang('Legal.title');
-        $this->data['pagebody'] = 'legal';
+        $this->data['title'] = 'The Fine Print';
 
-        // setup the asset links
-        $original = $this->parsedown->line(lang('Legal.marksLink'));
-        $this->data['marksLink'] = $this->parser->setData($this->data, 'raw')
-            ->renderString($original);
-        $original = $this->parsedown->line(lang('Legal.logoLink'));
-        $this->data['logoLink'] = $this->parser->setData($this->data, 'raw')
-            ->renderString($original);
-
-        $this->localize('Legal', 'marksTitle');
-        $original = $this->parsedown->text(lang('Legal.marksText'));
-        $this->data['marksText'] = $this->parser->setData($this->data, 'raw')
-            ->renderString($original);
-
-        $this->localize('Legal', 'logoTitle');
-        $original = $this->parsedown->text(lang('Legal.logoText'));
-        $this->data['logoText'] = $this->parser->setData($this->data, 'raw')
-            ->renderString($original);
-
-        $this->localize('Legal', 'thirdPartyTitle');
-        $original = $this->parsedown->text(lang('Legal.thirdPartyText'));
-        $this->data['thirdPartyText'] = $this->parser->setData($this->data, 'raw')
-            ->renderString($original);
-
-        $this->localize('Legal', 'externalLinksTitle');
-        $original = $this->parsedown->text(lang('Legal.externalLinksText'));
-        $this->data['externalLinksText'] = $this->parser->setData($this->data, 'raw')
-            ->renderString($original);
-
-        $this->render();
+        $this->render('legal', $this->data);
     }
 
 }
