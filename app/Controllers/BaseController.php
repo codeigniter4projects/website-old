@@ -13,6 +13,8 @@ namespace App\Controllers;
  *
  * @package CodeIgniter
  */
+
+use App\Libraries\GitHubHelper;
 use CodeIgniter\Controller;
 use CodeIgniter\HTTP\RequestInterface;
 use CodeIgniter\HTTP\ResponseInterface;
@@ -35,51 +37,21 @@ class BaseController extends Controller
 	 */
 	protected $helpers = [];
 
+    /**
+     * @var GitHubHelper
+     */
+	protected $gitter;
+
 	/**
 	 * Initialization.
 	 *
 	 */
-	public function initController(RequestInterface $request, ResponseInterface $response, LoggerInterface $logger)
+	public function __construct()
 	{
-		// Do Not Edit This Line
-		parent::initController($request, $response, $logger);
-
-		$this->data = [];
 		$this->config = config('App');
 		$this->data['mybb_forum_url'] = $this->config->mybbForumURL;
 		$this->errors = [];
-		$this->parsedown = new \Parsedown();
-
-		// URL without the locale
-		$this->realUrl = trim('/' . $this->request->uri->getSegment(2) . '/' . $this->request->uri->getSegment(3), '/ ');
-		if (empty($this->realUrl))
-			$this->realUrl = 'home';
-
-		$this->response->setStatusCode(Response::HTTP_OK);
-		$this->response->setHeader('Content-type', 'text/html');
-		$this->response->noCache();
-
-
-		// Prevent some security threats, per Kevin
-		// Turn on IE8-IE9 XSS prevention tools
-		$this->response->setHeader('X-XSS-Protection', '1; mode=block');
-		// Don't allow any pages to be framed - Defends against CSRF
-		$this->response->setHeader('X-Frame-Options', 'DENY');
-		// prevent mime based attacks
-		$this->response->setHeader('X-Content-Type-Options', 'nosniff');
-
-		$gitter = new \App\Libraries\GithubAPI();
-
-		$info4 = $gitter->getLatestRelease('codeigniter4', 'framework');
-		$this->data['v4name'] = $info4['tag_name'];
-		$this->data['v4link'] = $info4['zipball_url'];
-
-		$info3 = $gitter->getLatestTag('bcit-ci', 'CodeIgniter');
-		$this->data['v3name'] = $info3['name'];
-		$this->data['v3link'] = $info3['zipball_url'];
-
-		$info5 = $gitter->getLatestRelease('bcit-ci', 'codeigniter3-translations');
-		$this->data['v3trans'] = $info5['tag_name'];
+		$this->gitter = new GitHubHelper();
 	}
 
     /**
@@ -91,6 +63,11 @@ class BaseController extends Controller
      */
 	protected function render(string $view)
 	{
+        // URL without the locale
+        $this->realUrl = trim('/' . $this->request->uri->getSegment(2) . '/' . $this->request->uri->getSegment(3), '/ ');
+        if (empty($this->realUrl))
+            $this->realUrl = 'home';
+
         $this->buildNavbars();
 	    $data = $this->data;
 
@@ -99,7 +76,14 @@ class BaseController extends Controller
             $data['pagetitle'] = $data['title'];
         }
 
-		$data['footerline'] = $this->parsedown->line(lang('Site.footerLine'));
+        $this->response->noCache();
+        // Prevent some security threats, per Kevin
+        // Turn on IE8-IE9 XSS prevention tools
+        $this->response->setHeader('X-XSS-Protection', '1; mode=block');
+        // Don't allow any pages to be framed - Defends against CSRF
+        $this->response->setHeader('X-Frame-Options', 'DENY');
+        // prevent mime based attacks
+        $this->response->setHeader('X-Content-Type-Options', 'nosniff');
 
 		// finally, assemble the browser page!
 		echo view($view, $data);

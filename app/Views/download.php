@@ -16,7 +16,7 @@
 
                     <p>CodeIgniter 4 is the upcoming version of the framework, intended for use with PHP 7.2.</p>
 
-                    <p>Development is underway, and the current version is {v4name}.</p>
+                    <p>Development is underway, and the current version is <?= esc($v4name) ?>.</p>
 
                     <p>You *could* download the V4 framework using the button below, but we encourage you
                         to check the <a href="https://codeigniter4.github.io/userguide/installation/index.html">Installation section</a>
@@ -24,7 +24,7 @@
 
                     <ul class="nav nav-pills justify-content-center">
                         <li class="nav-item" style="margin:0.5em;">
-                            <a href="http://github.com/codeigniter4/CodeIgniter4/archive/{v4name}.zip" class="nav-link btn-success" title="Download the latest version">
+                            <a href="http://github.com/codeigniter4/CodeIgniter4/archive/<?= esc($v4name, 'attr') ?>.zip" class="nav-link btn-success" title="Download the latest version">
                                 <i class="glyphicon glyphicon-save"></i> Download
                             </a>
                         </li>
@@ -54,19 +54,19 @@
                 <div class="well download">
                     <h3 class="text-center">CodeIgniter 3</h3>
 
-                    <p>CodeIgniter {v3name} is the current version of the framework, intended for use with PHP 5.6+.</p>p
+                    <p>CodeIgniter <?= esc($v3name) ?> is the current version of the framework, intended for use with PHP 5.6+.</p>
 
                     <p>There have been a number of refinements since version 2, notably with the database,
                         session handling and encryption. Development of this version is ongoing.</p>
 
                     <ul class="nav nav-pills justify-content-center">
                         <li class="nav-item" style="margin:0.5em;">
-                            <a href="{v3link}" class="nav-link btn-primary" title="Download CodeIgniter 3">
+                            <a href="<?= esc($v3link, 'attr') ?>" class="nav-link btn-primary" title="Download CodeIgniter 3">
                                 <i class="glyphicon glyphicon-save"></i> Download
                             </a>
                         </li>
                         <li class="nav-item" style="margin:0.5em;">
-                            <a href="https://github.com/bcit-ci/codeigniter3-translations/archive/{v3trans}.zip" class="nav-link btn-primary" title="Download System Message Translations">
+                            <a href="https://github.com/bcit-ci/codeigniter3-translations/archive/<?= esc($v3trans, 'attr') ?>.zip" class="nav-link btn-primary" title="Download System Message Translations">
                                 <i class="glyphicon glyphicon-save"></i> Translations
                             </a>
                         </li>

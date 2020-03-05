@@ -15,6 +15,7 @@ class Download extends BaseController
      */
 	public function index()
 	{
+        $this->data = $this->gitter->fillReleaseInfo($this->data);
 	    $this->data['title'] = 'Download CodeIgniter';
 
 		$this->render('download');

@@ -27,7 +27,7 @@
                             </a>
                         </li>
                         <li class="nav-item" style="margin:0.5em;">
-                            <a href="https://github.com/codeigniter4/userguide/archive/{v4name}.zip" class="nav-link btn-primary" title="Download the User Guide">
+                            <a href="https://github.com/codeigniter4/userguide/archive/<?= esc($v4name, 'attr') ?>.zip" class="nav-link btn-primary" title="Download the User Guide">
                                 <i class="glyphicon glyphicon-save"></i> Offline UG
                             </a>
                         </li>
@@ -58,12 +58,12 @@
                             </a>
                         </li>
                         <li class="nav-item" style="margin:0.5em;">
-                            <a href="/data/CodeIgniter-{v3name}-userguide.zip" class="nav-link btn-primary" title="Download the User Guide">
+                            <a href="/data/CodeIgniter-<?= esc($v3name, 'attr') ?>-userguide.zip" class="nav-link btn-primary" title="Download the User Guide">
                                 <i class="glyphicon glyphicon-save"></i> Offline UG
                             </a>
                         </li>
                         <li class="nav-item" style="margin:0.5em;">
-                            <a href="/data/CodeIgniter User Guide {v3name}.epub"
+                            <a href="/data/CodeIgniter User Guide <?= esc($v3name, 'attr') ?>.epub"
                                class="nav-link btn-primary" title="Read them online">
                                 <i class="glyphicon glyphicon-save"></i> Epub UG
                             </a>

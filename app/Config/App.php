@@ -30,6 +30,9 @@ class App extends BaseConfig
 		]
 	];
 
+	// Cache expiration time for GitHub data
+    public $gitHubExpires = 14400; // 4 hours
+
 	/*
 	  |--------------------------------------------------------------------------
 	  | MY BB Forum configurations
