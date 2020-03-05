@@ -84,18 +84,9 @@ class Contribute extends BaseController
 	// present our responsible disclosure page
 	function responsible()
 	{
-		$this->data['title'] = lang('Disclosure.title');
-		$this->data['pagebody'] = 'responsible';
+		$this->data['title'] = 'Responsible Disclosure';
 
-		// localized page pieces
-		$this->localize('Disclosure', 'heading');
-		$this->localize('Disclosure', 'subheading');
-
-		$original = $this->parsedown->line(lang('Disclosure.theText'));
-		$this->data['theText'] = $this->parser->setData($this->data, 'raw')
-				->renderString($original);
-
-		$this->render();
+		$this->render('responsible', $this->data);
 	}
 
 	// build the hit parade for this group of contributors
