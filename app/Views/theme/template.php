@@ -53,10 +53,10 @@
 			<div class="footer-copyright">
 				<div class="container">
 					<div class="row">
-						<p class="text-center">CodeIgniter was created by [EllisLab](http://www.ellislab.com/),
-                            fostered by [BCIT](http://www.bcit.ca/cas/computing/),
+                        <p class="text-center">CodeIgniter was created by <a href="http://www.ellislab.com/">EllisLab</a>,
+                            fostered by <a href="http://www.bcit.ca/cas/computing/">BCIT</a>,
                             and is a project of the CodeIgniter Foundation.
-                            [<span class="glyphicon glyphicon-envelope"></span>](mailto:admin@codeigniter.com)</p>
+                            <a href="mailto:admin@codeigniter.com"><span class="glyphicon glyphicon-envelope"></span></a></p>
 					</div>
 				</div>
 			</div>

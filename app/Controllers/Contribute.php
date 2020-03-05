@@ -19,7 +19,10 @@ class Contribute extends BaseController
 	//  The normal pages
 	//-------------------------------------------------------------
 
-	function index()
+    /**
+     * Primary Contribute Page
+     */
+	public function index()
 	{
 		$this->data['title'] = 'Contribute to CodeIgniter';
 		$gitter = new \App\Libraries\GithubAPI();
@@ -81,16 +84,24 @@ class Contribute extends BaseController
 		$this->render('contribute', $this->data);
 	}
 
-	// present our responsible disclosure page
-	function responsible()
+    /**
+     * Present our responsible disclosure page
+     */
+	public function responsible()
 	{
 		$this->data['title'] = 'Responsible Disclosure';
 
 		$this->render('responsible', $this->data);
 	}
 
-	// build the hit parade for this group of contributors
-	function hitparade($info)
+    /**
+     * build the hit parade for this group of contributors
+     *
+     * @param $info
+     *
+     * @return string
+     */
+	protected function hitparade($info)
 	{
 		$heros = [];
 		if ( ! empty($info))
@@ -110,8 +121,14 @@ class Contribute extends BaseController
 			return '';
 	}
 
-	// determine how many stars a contributor earns
-	function stars($contributions)
+    /**
+     * determine how many stars a contributor earns
+     *
+     * @param $contributions
+     *
+     * @return string
+     */
+	protected function stars($contributions)
 	{
 		$result = $this->astar;
 		while ($contributions > 9)
