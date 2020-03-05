@@ -12,11 +12,6 @@ namespace App\Controllers;
  */
 class Help extends BaseController
 {
-
-    //-------------------------------------------------------------
-    //  The normal pages
-    //-------------------------------------------------------------
-
     /**
      * Help page
      */
@@ -24,7 +19,7 @@ class Help extends BaseController
     {
         $this->data['title'] = 'Policies';
 
-        $this->render('help', $this->data);
+        $this->render('help');
     }
 
     /**
@@ -85,7 +80,7 @@ class Help extends BaseController
             ],
         ];
 
-        $this->render('about', $this->data);
+        $this->render('about');
     }
 
     /**
@@ -95,7 +90,7 @@ class Help extends BaseController
     {
         $this->data['title'] = 'The Fine Print';
 
-        $this->render('legal', $this->data);
+        $this->render('legal');
     }
 
 }

@@ -81,7 +81,7 @@ class Contribute extends BaseController
 		}
 		$this->data['new_web_heros'] = $this->hitparade($info);
 
-		$this->render('contribute', $this->data);
+		$this->render('contribute');
 	}
 
     /**
@@ -91,7 +91,7 @@ class Contribute extends BaseController
 	{
 		$this->data['title'] = 'Responsible Disclosure';
 
-		$this->render('responsible', $this->data);
+		$this->render('responsible');
 	}
 
     /**

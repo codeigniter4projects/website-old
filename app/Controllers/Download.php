@@ -10,17 +10,14 @@ namespace App\Controllers;
  */
 class Download extends BaseController
 {
-
-	//-------------------------------------------------------------
-	//  The normal pages
-	//-------------------------------------------------------------
-
-	function index()
+    /**
+     * Display the Download page.
+     */
+	public function index()
 	{
-	    $data = $this->data;
-	    $data['title'] = 'Download CodeIgniter';
+	    $this->data['title'] = 'Download CodeIgniter';
 
-		$this->render('download', $data);
+		$this->render('download');
 	}
 
 }

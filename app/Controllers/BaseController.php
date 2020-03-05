@@ -86,12 +86,13 @@ class BaseController extends Controller
      * Render this page
      *
      * @param string $view The view file to render
-     * @param array  $data
+     *
+     * @return string
      */
-	protected function render(string $view, array $data = [])
+	protected function render(string $view)
 	{
         $this->buildNavbars();
-	    $data = array_merge($data, $this->data);
+	    $data = $this->data;
 
 		if ( ! isset($data['pagetitle']))
         {
@@ -100,20 +101,8 @@ class BaseController extends Controller
 
 		$data['footerline'] = $this->parsedown->line(lang('Site.footerLine'));
 
-		// title block, jumbo for the homepage
-//		$layout = empty($this->data['title']) ? 'jumbotitle' : 'title';
-//		$this->data['titling'] = view('theme/' . $layout, $this->data);
-
 		// finally, assemble the browser page!
 		echo view($view, $data);
-	}
-
-	/**
-	 * copy a localized message to a same-named data property for rendering
-	 */
-	protected function localize($page, $key)
-	{
-		$this->data[$key] = lang($page . '.' . $key);
 	}
 
 	/**

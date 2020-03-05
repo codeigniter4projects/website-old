@@ -11,16 +11,14 @@ namespace App\Controllers;
  */
 class Docs extends BaseController
 {
-
-	//-------------------------------------------------------------
-	//  The normal pages
-	//-------------------------------------------------------------
-
-	function index()
+    /**
+     * Displayt the Docs page.
+     */
+	public function index()
 	{
 		$this->data['title'] = 'CodeIgniter Documentation';
 
-		$this->render('docs', $this->data);
+		$this->render('docs');
 	}
 
 }

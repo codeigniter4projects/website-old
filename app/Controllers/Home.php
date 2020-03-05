@@ -5,6 +5,9 @@ use CodeIgniter\Controller;
 
 class Home extends BaseController
 {
+    /**
+     * Display the home page.
+     */
 	public function index()
 	{
 		$this->data['title'] = '';

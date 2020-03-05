@@ -10,15 +10,14 @@
  */
 class Community extends BaseController {
 
-	//-------------------------------------------------------------
-	//  The normal pages
-	//-------------------------------------------------------------
-
-	function index()
+    /**
+     * Render the community page.
+     */
+	public function index()
 	{
 		$this->data['title'] = 'CodeIgniter Community';
 
-		$this->render('community', $this->data);
+		$this->render('community');
 	}
 
 }
