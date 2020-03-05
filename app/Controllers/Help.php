@@ -22,25 +22,9 @@ class Help extends BaseController
      */
     public function index()
     {
-        $this->data['title'] = lang('Policies.title');
-        $this->data['pagebody'] = 'help';
+        $this->data['title'] = 'Policies';
 
-        $this->localize('Policies', 'termsTitle');
-        $original = $this->parsedown->text(lang('Policies.termsText'));
-        $this->data['termsText'] = $this->parser->setData($this->data, 'raw')
-            ->renderString($original);
-
-        $this->localize('Policies', 'privacyTitle');
-        $original = $this->parsedown->text(lang('Policies.privacyText'));
-        $this->data['privacyText'] = $this->parser->setData($this->data, 'raw')
-            ->renderString($original);
-
-        $this->localize('Policies', 'dataTitle');
-        $original = $this->parsedown->text(lang('Policies.dataText'));
-        $this->data['dataText'] = $this->parser->setData($this->data, 'raw')
-            ->renderString($original);
-
-        $this->render();
+        $this->render('help', $this->data);
     }
 
     /**
