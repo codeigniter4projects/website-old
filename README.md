@@ -34,7 +34,7 @@ Some of the programming design decisions reflected:
 -   View fragments are used to style single "records" on their own,
     improving cohesion.
 
-##Resources
+## Resources
 
 -  [User Guide](https://codeigniter4.github.io/userguide/)
 -  [Community Forums](https://forum.codeigniter.com/)
@@ -45,7 +45,7 @@ Some of the programming design decisions reflected:
 PHP version 7.2 or higher is required, with the following extensions installed: 
 
 - [intl](http://php.net/manual/en/intl.requirements.php)
-- [libcurl](http://php.net/manual/en/curl.requirements.php) if you plan to use the HTTP\CURLRequest library
+- [libcurl](http://php.net/manual/en/curl.requirements.php) if you plan to use the `HTTP\CURLRequest` library
 
 Additionally, make sure that the following extensions are enabled in your PHP:
 
