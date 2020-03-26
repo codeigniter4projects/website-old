@@ -10,7 +10,13 @@ class Home extends BaseController
      */
 	public function index()
 	{
-	    $this->data = $this->gitter->fillReleaseInfo($this->data);
+	    try
+        {
+            $this->data = $this->gitter->fillReleaseInfo($this->data);
+        }
+        catch(\Exception $e) {
+            $this->data = [];
+	    }
 
 		$this->data['title'] = '';
 		$this->data['pagetitle'] = lang('Home.pageTitle');
@@ -19,9 +25,9 @@ class Home extends BaseController
 		// build the localized "biglinks"
 		$this->data['biglinks'] = [
 			['icon'	 => 'download',
-				'link'	 => 'https://github.com/codeigniter4/CodeIgniter4/archive/' . $this->data['v4name'] . '.zip',
+				'link'	 => 'https://github.com/codeigniter4/CodeIgniter4/archive/' . $this->data['v4name'] ?? '' . '.zip',
 				'label'	 => lang('Home.block1Title'),
-				'text'	 => lang('Home.block1Desc') . $this->data['v4name']],
+				'text'	 => lang('Home.block1Desc') . $this->data['v4name'] ?? ''],
 			['icon'	 => 'book',
 				'link'	 => '/user_guide/index.html',
 				'label'	 => lang('Home.block2Title'),
