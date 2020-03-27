@@ -24,7 +24,7 @@
 
                     <ul class="nav nav-pills justify-content-center">
                         <li class="nav-item" style="margin:0.5em;">
-                            <a href="http://github.com/codeigniter4/CodeIgniter4/archive/<?= esc($v4name, 'attr') ?>.zip" class="nav-link btn-success" title="Download the latest version">
+                            <a href="http://github.com/codeigniter4/framework/archive/<?= esc($v4name, 'attr') ?>.zip" class="nav-link btn-success" title="Download the latest version">
                                 <i class="glyphicon glyphicon-save"></i> Download
                             </a>
                         </li>
