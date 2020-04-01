@@ -21,7 +21,7 @@
 
                     <ul class="nav nav-pills justify-content-center">
                         <li class="nav-item" style="margin:0.5em;">
-                            <a href="https://codeigniter4.github.io/userguide/"
+                            <a href="/userguide/index.html"
                                class="nav-link btn-success" title="Read it online">
                                 <i class="glyphicon glyphicon-book"></i> Online UG
                             </a>
@@ -52,7 +52,7 @@
 
                     <ul class="nav nav-pills justify-content-center">
                         <li class="nav-item" style="margin:0.5em;">
-                            <a href="/user_guide/index.html"
+                            <a href="/userguide3/index.html"
                                class="nav-link btn-primary" title="Read it online">
                                 <i class="glyphicon glyphicon-book"></i> Online UG
                             </a>
