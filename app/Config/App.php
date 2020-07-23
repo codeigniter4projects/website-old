@@ -11,25 +11,6 @@ class App extends BaseConfig
 	  |--------------------------------------------------------------------------
 	 */
 
-	// the menu basics (top navbar); names are localized message keys
-	public $menuChoices = [
-		'menudata' => [
-			['name' => 'topNav1', 'link' => '/home'],
-			['name' => 'topNav2', 'link' => '/download'],
-			['name' => 'topNav3', 'link' => '/docs'],
-			['name' => 'topNav4', 'link' => '/community'],
-			['name' => 'topNav5', 'link' => '/contribute']
-		]
-	];
-	// data for the footer navbar; names are localized message keys
-	public $footerChoices = [
-		'menudata' => [
-			['name' => 'bottomNav1', 'link' => '/help'],
-			['name' => 'bottomNav2', 'link' => '/help/legal'],
-			['name' => 'bottomNav3', 'link' => '/help/about']
-		]
-	];
-
 	// Cache expiration time for GitHub data
     public $gitHubExpires = 14400; // 4 hours
 

@@ -16,11 +16,6 @@ namespace App\Controllers;
 
 use App\Libraries\GitHubHelper;
 use CodeIgniter\Controller;
-use CodeIgniter\HTTP\RequestInterface;
-use CodeIgniter\HTTP\ResponseInterface;
-use CodeIgniter\HTTP\Response;
-use Config\Services;
-use Psr\Log\LoggerInterface;
 
 class BaseController extends Controller
 {
@@ -63,13 +58,6 @@ class BaseController extends Controller
      */
 	protected function render(string $view)
 	{
-	    dd(url_is('home'));
-        // URL without the locale
-        $this->realUrl = trim('/' . $this->request->uri->getSegment(2) . '/' . $this->request->uri->getSegment(3), '/ ');
-        if (empty($this->realUrl))
-            $this->realUrl = 'home';
-
-        $this->buildNavbars();
 	    $data = $this->data;
 
 		if ( ! isset($data['pagetitle']))
@@ -89,31 +77,4 @@ class BaseController extends Controller
 		// finally, assemble the browser page!
 		echo view($view, $data);
 	}
-
-	/**
-	 * Build the localized top & bottom navbars
-	 */
-	private function buildNavbars()
-	{
-		// Massage the menubar
-		$choices = $this->config->menuChoices;
-		foreach ($choices['menudata'] as &$menuitem)
-		{
-			$menuitem['active'] = (ltrim($menuitem['link'], '/ ') == $this->realUrl) ? 'active' : '';
-			$menuitem['link'] = $menuitem['link'];
-			$menuitem['name'] = lang('Site.' . $menuitem['name']); // localize
-		}
-		$this->data['menubar'] = view('theme/menubar', $choices);
-
-		// Massage the footer menu
-		$choices = $this->config->footerChoices;
-		foreach ($choices['menudata'] as &$menuitem)
-		{
-			$menuitem['active'] = (ltrim($menuitem['link'], '/ ') == $this->realUrl) ? 'active' : '';
-			$menuitem['link'] = $menuitem['link'];
-			$menuitem['name'] = lang('Site.' . $menuitem['name']); // localize
-		}
-		$this->data['footerbar'] = view('theme/footerbar', $choices);
-	}
-
 }
