@@ -10,13 +10,11 @@ class Filters extends BaseConfig
 		'csrf'     => \CodeIgniter\Filters\CSRF::class,
 		'toolbar'  => \CodeIgniter\Filters\DebugToolbar::class,
 		'honeypot' => \CodeIgniter\Filters\Honeypot::class,
-		'localize' => \App\Filters\Localize::class,
 	];
 
 	// Always applied before every request
 	public $globals = [
 		'before' => [
-			'localize',
 			//'honeypot'
 			// 'csrf',
 		],

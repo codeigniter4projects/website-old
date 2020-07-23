@@ -37,17 +37,6 @@ $routes->get('help','Help::index');
 $routes->get('help/legal','Help::legal');
 $routes->get('help/about','Help::about');
 
-// localized routes
-$routes->get('{locale}/home','Home::index');
-$routes->get('{locale}/download','Download::index');
-$routes->get('{locale}/docs','Docs::index');
-$routes->get('{locale}/community','Community::index');
-$routes->get('{locale}/contribute','Contribute::index');
-$routes->get('{locale}/contribute/responsible','Contribute::responsible');
-$routes->get('{locale}/help','Help::index');
-$routes->get('{locale}/help/legal','Help::legal');
-$routes->get('{locale}/help/about','Help::about');
-
 /**
  * --------------------------------------------------------------------
  * Additional Routing

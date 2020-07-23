@@ -22,7 +22,7 @@ class Home extends BaseController
 		$this->data['pagetitle'] = lang('Home.pageTitle');
 		$this->data['pagebody'] = 'welcome';
 
-		// build the localized "biglinks"
+		// build the "biglinks"
 		$this->data['biglinks'] = [
 			['icon'	 => 'download',
 				'link'	 => empty($this->data['v4name'])
@@ -39,12 +39,12 @@ class Home extends BaseController
 				'label'	 => lang('Home.block3Title'),
 				'text'	 => lang('Home.block3Desc')],
 			['icon'	 => 'random',
-				'link'	 => 'https://github.com/bcit-ci/CodeIgniter',
+				'link'	 => 'https://github.com/codeigniter4/CodeIgniter4',
 				'label'	 => lang('Home.block4Title'),
 				'text'	 => lang('Home.block4Desc')],
 		];
 
-		// build the localized left-column of features
+		// build the left-column of features
 		$this->data['features1'] = [
 			['icon'	 => 'star-empty',
 				'label'	 => lang('Home.blurb1Title'),
@@ -57,7 +57,7 @@ class Home extends BaseController
 				'text'	 => lang('Home.blurb4Desc')],
 		];
 
-		// build the localized right-column of features
+		// build the right-column of features
 		$this->data['features2'] = [
 			['icon'	 => 'dashboard',
 				'label'	 => lang('Home.blurb4Title'),

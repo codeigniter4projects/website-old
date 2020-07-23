@@ -63,6 +63,7 @@ class BaseController extends Controller
      */
 	protected function render(string $view)
 	{
+	    dd(url_is('home'));
         // URL without the locale
         $this->realUrl = trim('/' . $this->request->uri->getSegment(2) . '/' . $this->request->uri->getSegment(3), '/ ');
         if (empty($this->realUrl))

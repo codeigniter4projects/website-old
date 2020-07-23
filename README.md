@@ -26,8 +26,6 @@ Some of the programming design decisions reflected:
     only with building its part of a webpage.
 -   A base controller takes care of assembling finished pages, using the 
     master template.
--   Using the template parser eliminates PHP code from
-    the views, where possible.
 -   Mock data for the recent news and most recently active threads, means
     that the website can be tested locally, without needing access to 
     the live forum database.
