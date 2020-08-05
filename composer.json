@@ -7,7 +7,8 @@
     "require": {
         "php": ">=7.2",
         "codeigniter4/framework": "^4",
-        "knplabs/github-api": "~1.5"
+        "knplabs/github-api": "~1.5",
+        "league/commonmark": "^1.5"
     },
     "require-dev": {
         "mikey179/vfsstream": "1.6.*",
