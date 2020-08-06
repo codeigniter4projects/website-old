@@ -18,7 +18,7 @@ class Post extends Entity
      */
     public function link()
     {
-
+        return site_url('/news/'. $this->slug);
     }
 
     /**

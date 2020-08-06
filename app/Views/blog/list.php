@@ -1,4 +1,4 @@
-<?= $this->extend('theme/template') ?>
+<?= $this->extend('theme/two_column_template') ?>
 
 <?= $this->section('content') ?>
 

@@ -60,31 +60,9 @@ class Blog extends BaseController
             throw PageNotFoundException::forPageNotFound();
         }
 
-        $this->data['posts'] = $this->blog->getPost($slug);
+        $this->data['post'] = $this->blog->getPost($slug);
         $this->data['title'] = $post->title ?? 'Some Post';
 
         echo $this->render('blog/single');
-    }
-
-    /**
-     * A View Cell to display the most
-     * recent posts as a list of links.
-     *
-     * @param int $limit
-     */
-    public function recentPosts(int $limit = 5)
-    {
-        // Coming soon...
-    }
-
-    /**
-     * A View Cell to display the most
-     * visited posts as a list of links.
-     *
-     * @param int $limit
-     */
-    public function popularPosts(int $limit = 5)
-    {
-        // Coming soon...
     }
 }

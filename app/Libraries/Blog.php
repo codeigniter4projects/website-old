@@ -2,6 +2,7 @@
 
 use App\Entities\Post;
 use App\Exceptions\BlogException;
+use CodeIgniter\Exceptions\PageNotFoundException;
 use Config\Blog as BlogConfig;
 use League\CommonMark\CommonMarkConverter;
 
@@ -91,7 +92,21 @@ class Blog
      */
     public function getPost(string $slug)
     {
+        $cacheKey = "blog_post_{$slug}";
 
+        if (! $post = cache($cacheKey)) {
+            $files = glob("{$this->config->contentPath}*.{$slug}.md");
+
+            if (! count($files)) {
+                throw PageNotFoundException::forPageNotFound();
+            }
+
+            $post = $this->readPost($this->config->contentPath, basename($files[0]));
+
+            cache()->save($cacheKey, $post);
+        }
+
+        return $post;
     }
 
     /**
@@ -151,5 +166,28 @@ class Blog
         $post->html = $markdown->convertToHtml($post->body);
 
         return $post;
+    }
+
+    /**
+     * Displays the HTML "widget" for the list of recent posts
+     * in the sidebar.
+     *
+     * @param int $limit
+     */
+    public function recentPostWidget(int $limit): string
+    {
+        $posts = $this->getRecentPosts($limit);
+
+        if (! count($posts)) {
+            return '';
+        }
+
+        $html = '';
+
+        foreach ($posts as $post) {
+            $html .= "<li><a href='{$post->link()}'>{$post->title}</a></li>\n";
+        }
+
+        return "<h5>Recent Posts</h5>\n<ul>\n{$html}</ul>\n";
     }
 }
