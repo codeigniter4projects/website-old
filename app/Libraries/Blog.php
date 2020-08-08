@@ -82,7 +82,43 @@ class Blog
 
     public function getPopularPosts(int $limit = 5)
     {
+        $path = WRITEPATH .'blog_visits.txt';
 
+        if (! is_file($path)) {
+            return '';
+        }
+
+        $lines = unserialize(file_get_contents($path));
+
+        if (! count($lines)) {
+            return '';
+        }
+
+        arsort($lines);
+
+        $slugs = array_slice($lines, 0, $limit);
+        $files = get_filenames($this->config->contentPath);
+        $posts = [];
+
+        foreach($files as $file) {
+            foreach ($slugs as $slug => $count) {
+                try {
+                    if (stripos($file, $slug) !== false) {
+                        $posts[$count] = $this->getPost($slug);
+                    }
+                }
+                // Don't fail if we can't find the file anymore...
+                catch(\Throwable $e) {
+                    continue;
+                }
+            }
+        }
+
+        // It seems to lose it's ordering above,
+        // so ensure we're sorted.
+        krsort($posts);
+
+        return $posts;
     }
 
     /**
@@ -107,6 +143,80 @@ class Blog
         }
 
         return $post;
+    }
+
+    /**
+     * Records a single "hit", or visit to a page
+     * so that we can track "popular" pages.
+     *
+     * @param string $slug
+     */
+    public function recordVisit(string $slug)
+    {
+        $path = WRITEPATH .'blog_visits.txt';
+
+        $lines = file_exists($path)
+            ? unserialize(file_get_contents($path))
+            : [];
+
+        if (! isset($lines[$slug])) {
+            $lines[$slug] = 1;
+        }
+        else {
+            $lines[$slug]++;
+        }
+
+        // Update our records
+        helper('filesystem');
+        write_file($path, serialize($lines));
+    }
+
+    /**
+     * Displays the HTML "widget" for the list of recent posts
+     * in the sidebar.
+     *
+     * @param int $limit
+     */
+    public function recentPostsWidget(int $limit): string
+    {
+        $posts = $this->getRecentPosts($limit);
+
+        if (! count($posts)) {
+            return '';
+        }
+
+        $html = '';
+
+        foreach ($posts as $post) {
+            $html .= "<li><a href='{$post->link()}'>{$post->title}</a></li>\n";
+        }
+
+        return "<h5>Recent Posts</h5>\n<ul>\n{$html}</ul>\n";
+    }
+
+    /**
+     * Displays the HTML "widget" for the list of popular posts
+     * in the sidebar.
+     *
+     * @param int $limit
+     *
+     * @return string
+     */
+    public function popularPostsWidget(int $limit): string
+    {
+        $posts = $this->getPopularPosts($limit);
+
+        if (! count($posts)) {
+            return '';
+        }
+
+        $html = '';
+
+        foreach ($posts as $post) {
+            $html .= "<li><a href='{$post->link()}'>{$post->title}</a></li>\n";
+        }
+
+        return "<h5>Popular Posts</h5>\n<ul>\n{$html}</ul>\n";
     }
 
     /**
@@ -166,28 +276,5 @@ class Blog
         $post->html = $markdown->convertToHtml($post->body);
 
         return $post;
-    }
-
-    /**
-     * Displays the HTML "widget" for the list of recent posts
-     * in the sidebar.
-     *
-     * @param int $limit
-     */
-    public function recentPostWidget(int $limit): string
-    {
-        $posts = $this->getRecentPosts($limit);
-
-        if (! count($posts)) {
-            return '';
-        }
-
-        $html = '';
-
-        foreach ($posts as $post) {
-            $html .= "<li><a href='{$post->link()}'>{$post->title}</a></li>\n";
-        }
-
-        return "<h5>Recent Posts</h5>\n<ul>\n{$html}</ul>\n";
     }
 }

@@ -1,5 +1,7 @@
 <article>
-    <h1><?= esc($post->title) ?></h1>
+    <h1>
+        <a href="<?= $post->link() ?>"><?= esc($post->title) ?></a>
+    </h1>
     <p class="meta">
         <?= ! empty($post->author) ? 'by '. esc($post->author) : '' ?>
 
