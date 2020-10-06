@@ -8,10 +8,9 @@ rewritten using CodeIgniter4. This website replaces the
 `previous project <https://github.com/bcit-ci/codeigniter-website>`_,
 
 The website has been open-sourced in the interest of transparency.
-We welcome issues and pull requests, to the *develop* branch,
- to handle suggestions or corrections 
-to the style or structure of the website. 
-We will be a bit more reserved with the content :-/
+
+See CONTRIBUTING.md for contribution guidelines generally,
+and LOCALIZATION.md for localization guidelines specifically
 
 
 *****************

@@ -9,30 +9,34 @@
 		<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="/assets/css/style.css"/>
 		<link rel="stylesheet" type="text/css" href="/assets/github-buttons/style.css"/>
-		<title>{pagetitle}</title>
+<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Raleway" />
+<title><?= $pagetitle ?></title>
 	</head>
     <body>
 
 		<nav class="navbar navbar-expand-lg fixed-top navbar-dark nav-pills" id="mainnav" role="navigation" style="background-color: #dd4814;">
 			<div class="container">
-				<a class="navbar-brand" href="/">CodeIgniter</a>
+				<a class="navbar-brand" href="/">Code<strong>Igniter</strong></a>
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
-				</button>			
+				</button>
 				<div class="collapse navbar-collapse justify-content-end"  id="navbarNav">
 					<ul class="navbar-nav justify-content-end nav-pills">
-						{menubar}
-						{localizer}
+                        <?= $menubar ?>
 					</ul>
 				</div>
 			</div>
 		</nav>
 
-		{titling}
+		<?php if(empty($title)) : ?>
+            <?= $this->include('theme/jumbotitle') ?>
+        <?php else : ?>
+            <?= $this->include('theme/title') ?>
+        <?php endif ?>
 
 		<div id="content">
 			<div class="container">
-				{content}
+                <?= $this->renderSection('content') ?>
 			</div>
 		</div>
 
@@ -41,7 +45,7 @@
 				<div class="container">
 					<div class="row">
 						<ul class="nav nav-pills">
-							{footerbar}
+							<?= $footerbar ?>
 						</ul>
 					</div>
 				</div>
@@ -49,7 +53,10 @@
 			<div class="footer-copyright">
 				<div class="container">
 					<div class="row">
-						<p class="text-center">{footerline}</p>
+                        <p class="text-center">CodeIgniter was created by <a href="http://www.ellislab.com/">EllisLab</a>,
+                            fostered by <a href="http://www.bcit.ca/cas/computing/">BCIT</a>,
+                            and is a project of the CodeIgniter Foundation.
+                            <a href="mailto:admin@codeigniter.com"><span class="glyphicon glyphicon-envelope"></span></a></p>
 					</div>
 				</div>
 			</div>

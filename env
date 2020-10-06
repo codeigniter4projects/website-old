@@ -14,7 +14,8 @@
 # ENVIRONMENT
 #--------------------------------------------------------------------
 
-# CI_ENVIRONMENT = production
+CI_ENVIRONMENT = production
+MOCK_MYBB = false
 
 #--------------------------------------------------------------------
 # APP

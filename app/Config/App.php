@@ -30,6 +30,9 @@ class App extends BaseConfig
 		]
 	];
 
+	// Cache expiration time for GitHub data
+    public $gitHubExpires = 14400; // 4 hours
+
 	/*
 	  |--------------------------------------------------------------------------
 	  | MY BB Forum configurations
@@ -41,6 +44,7 @@ class App extends BaseConfig
 	public $mybbNewsForum_id = 2;
 	public $mybbNewsUsernames = ['ciadmin', 'jlp', 'kilishan', 'Narf'];
 	public $mybbForumURL = 'https://forum.codeigniter.com';
+
 	/*
 	  |--------------------------------------------------------------------------
 	  | Base Site URL
@@ -124,7 +128,7 @@ class App extends BaseConfig
 	  | found, the first locale will be used.
 	  |
 	 */
-	public $supportedLocales = ['en'];
+	public $supportedLocales = ['en', 'fr', 'pt-BR', 'ru'];
 
 	/*
 	  |--------------------------------------------------------------------------

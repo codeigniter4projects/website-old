@@ -55,9 +55,8 @@ body {
 #mainnav .nav-pills > li {
     color: #5B5B5D;
     border-radius: 5px;
-    padding: 0px 0.5em 0px 0.5em;
+    padding: 1rem;
     background-color: #dd4814;
-    margin: -0.5em 0.5em -0.5em 0px;
 }
 #mainnav .nav-pills  > .nav-item:hover {
     color: white;
@@ -73,7 +72,7 @@ body {
     float: left;
     padding: 15px 15px 15px 45px;
     font-size: 26px;
-    font-family: 'amblebold_italic';
+    font-family: 'Raleway';
     font-weight: normal;
     line-height: 22px;
     height: 50px;
@@ -133,7 +132,7 @@ a .glyphicon {
     margin-bottom: 10px;
 }
 .features .feature h5 {
-    font-family: 'amblebold_italic';
+    font-family: 'Raleway';
     font-size: 19px;
     line-height: 20px;
     color: #404040;
@@ -229,7 +228,7 @@ a .glyphicon {
 /* Content
 -------------------------------------------------- */
 .download h3 {
-    font-family: 'amblebold_italic';
+    font-family: 'Raleway';
     margin-top: 10px;
     margin-bottom: 20px;
 }
@@ -260,7 +259,7 @@ a .glyphicon {
 }
 
 h2, h3 {
-    font-family: 'amblebold_italic';
+    font-family: 'Raleway';
 }
 
 .council img {padding-right:20px}
@@ -277,7 +276,7 @@ h2, h3 {
 }
 .jumbotron h1,
 .jumbotron .h1 {
-    font-family: 'amblebold_italic';
+    font-family: 'Raleway';
     color: #fff;
     font-size: 42px;
     text-shadow: 0 -1px 0 rgba(0,0,0, 0.8);

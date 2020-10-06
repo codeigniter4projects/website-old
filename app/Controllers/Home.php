@@ -5,31 +5,31 @@ use CodeIgniter\Controller;
 
 class Home extends BaseController
 {
-
-	function index()
+    /**
+     * Display the home page.
+     */
+	public function index()
 	{
-		$this->mybb = new \App\Models\Mybb();
-
+	    try
+        {
+            $this->data = $this->gitter->fillReleaseInfo($this->data);
+        }
+        catch(\Exception $e) {
+            $this->data = [];
+	    }
 
 		$this->data['title'] = '';
 		$this->data['pagetitle'] = lang('Home.pageTitle');
 		$this->data['pagebody'] = 'welcome';
 
-		// localized jumbotron
-		$this->localize('Home', 'jumboTitle');
-		$this->localize('Home', 'jumboMessage');
-
-		// localized subheadings
-		$this->localize('Home', 'recent');
-		$this->localize('Home', 'threads');
-		$this->localize('Home', 'why');
-
-		// build the localized "biglinks" 
+		// build the localized "biglinks"
 		$this->data['biglinks'] = [
 			['icon'	 => 'download',
-				'link'	 => 'https://github.com/bcit-ci/CodeIgniter/archive/' . $this->data['v3name'] . '.zip',
+				'link'	 => empty($this->data['v4name'])
+					? 'https://github.com/codeigniter4/framework/releases/'
+					: 'https://github.com/codeigniter4/framework/archive/' . $this->data['v4name'] . '.zip',
 				'label'	 => lang('Home.block1Title'),
-				'text'	 => lang('Home.block1Desc') . $this->data['v3name']],
+				'text'	 => lang('Home.block1Desc') . $this->data['v4name'] ?? ''],
 			['icon'	 => 'book',
 				'link'	 => '/user_guide/index.html',
 				'label'	 => lang('Home.block2Title'),
@@ -70,19 +70,14 @@ class Home extends BaseController
 				'text'	 => lang('Home.blurb6Desc')],
 		];
 
-		// Grab our forum information
-		$this->data['news'] = $this->forum_news();
-		$this->data['posts'] = $this->forum_posts();
-
 		$gitter = new \App\Libraries\GithubAPI();
-		$cache = \Config\Services::cache();
 
 		// get the repo stats
-		if ( ! $info = $cache->get('repo_info'))
+		if ( ! $info = cache('repo_info'))
 		{
-			$info = $gitter->getRepoInfo('bcit-ci', 'CodeIgniter');
+			$info = $gitter->getRepoInfo('codeigniter4', 'CodeIgniter4');
 			$ttl = 60 * 60 * 4; // time to live s/b 4 hours
-			$cache->save('repo_info', $info, $ttl);
+			cache()->save('repo_info', $info, $ttl);
 		}
 
 		// Fetch Github info
@@ -93,70 +88,15 @@ class Home extends BaseController
 				'stargazers_count'	 => number_format($info['stargazers_count']),
 				'forks_count'		 => number_format($info['forks_count'])
 			);
-			$fragment = $this->parser->setData($parms)->render('theme/_github_widget');
+			$fragment = view('theme/_github_widget', $parms);
 		}
 		else
 		{
 			$fragment = '';
 		}
-		$this->data['github_widget'] = $fragment;
+		$this->data['githubWidget'] = $fragment;
 
-		$this->render();
-	}
-
-	// Process the latest news from the forum
-	function forum_news()
-	{
-		// get the forum news
-		if ( ! $items = $this->cache->get('bb_news'))
-		{
-			$items = $this->mybb->getRecentNews(5);
-			$ttl = 60 * 60 * 4; // time to live s/b 4 hours
-			$this->cache->save('bb_news', $items, $ttl);
-		}
-
-		if ( ! empty($items) && is_array($items) && count($items))
-		{
-			// massage the date formats
-			foreach ($items as &$item)
-			{
-				$item['dateline'] = date('Y.m.d', $item['dateline']);
-				$item['mybb_forum_url'] = $this->config->mybbForumURL;
-				// escape the subject
-				$item['subject'] = htmlentities($item['subject']);
-				$item['subject'] = strip_tags($item['subject']); // fix #79
-			}
-			return $this->parser->setData(['news' => $items], 'raw')->render('forum/_news');
-		}
-		else
-			return view('forum/_drats');
-	}
-
-	// Process the latest posts from the forum
-	function forum_posts()
-	{
-		// get the forum posts
-		if ( ! $items = $this->cache->get('bb_posts'))
-		{
-			$items = $this->mybb->getRecentPosts(5);
-			$ttl = 60 * 60 * 4; // time to live s/b 4 hours
-			$this->cache->save('bb_posts', $items, $ttl);
-		}
-		if ( ! empty($items) && is_array($items) && count($items))
-		{
-			// massage the date formats
-			foreach ($items as &$item)
-			{
-				$item['lastpost'] = date('Y.m.d', $item['lastpost']);
-				$item['mybb_forum_url'] = $this->config->mybbForumURL;
-				// escape the subject
-				$item['subject'] = htmlentities($item['subject']);
-				$item['subject'] = strip_tags($item['subject']); // fix #79
-			}
-			return $this->parser->setData(array('posts' => $items), 'raw')->render('forum/_posts');
-		}
-		else
-			return view('forum/_drats');
+		$this->render('welcome');
 	}
 
 }

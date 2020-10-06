@@ -13,14 +13,14 @@ class Mybb // extends \CodeIgniter\Model
 {
 
 	/**
-	 * Are we running in mock mode? 
+	 * Are we running in mock mode?
 	 * If so, fake database results.
 	 * @var boolean
 	 */
 	protected $mock = false;
 
 	/**
-	 * Are we running in mock mode? 
+	 * Are we running in mock mode?
 	 * If so, fake database results.
 	 * @var array
 	 */
@@ -55,9 +55,12 @@ class Mybb // extends \CodeIgniter\Model
 	 */
 	public function __construct()
 	{
-//		parent :: __construct();
+		$this->config = config('App');
 
-		$this->config = new \Config\App();
+		// Allow mocking from the .env file
+        if (env('MOCK_MYBB')) {
+            $this->mock = env('MOCK_MYBB');
+        }
 
 		try
 		{
@@ -122,7 +125,7 @@ class Mybb // extends \CodeIgniter\Model
 		// If not running in production, return the mock data
 		if ($this->mock)
 		{
-			return $this->mockData['fx_posts'];
+			return $this->mockData['bogus_posts'];
 		}
 
 		$where = array(
