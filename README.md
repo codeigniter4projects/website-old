@@ -34,6 +34,26 @@ Some of the programming design decisions reflected:
 -   View fragments are used to style single "records" on their own,
     improving cohesion.
 
+## Installation
+
+Use these steps to create a local installation for development and testing.
+
+1. Clone the repo: `git clone https://github.com/codeigniter4projects/website2`
+2. Work in the repo directory: `cd website2`
+3.  Make sure the **writable** folder is accessible: `chmod -R 777 writable`
+4. Install dependencies: `composer install`
+5. Create your **.env** file: `cp env .env`
+6. Edit **.env** and set at least the following:
+	* `CI_ENVIRONMENT = development`
+	* `MOCK_MYBB = true`
+	* `app.baseURL = 'http://localhost:8080/'`
+
+At this point you should have a usable version of the current code! Try launching it locally:
+1. From the repo directory start serving the website: `php spark serve`
+2. In your web browser of choice navigate to the local URL: `http://localhost:8080`
+
+> Note: The example commands above are for Linux-based systems. You may need to adjust for your operating system.
+
 ## Resources
 
 -  [User Guide](https://codeigniter4.github.io/userguide/)
