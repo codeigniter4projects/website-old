@@ -1,5 +1,14 @@
 <?php
+
 namespace App\Controllers;
+
+use App\Libraries\GitHubHelper;
+use CodeIgniter\Controller;
+use CodeIgniter\HTTP\RequestInterface;
+use CodeIgniter\HTTP\ResponseInterface;
+use CodeIgniter\HTTP\Response;
+use Config\Services;
+use Psr\Log\LoggerInterface;
 
 /**
  * Class BaseController
@@ -10,17 +19,7 @@ namespace App\Controllers;
  *     class Home extends BaseController
  *
  * For security be sure to declare any new methods as protected or private.
- *
- * @package CodeIgniter
  */
-
-use App\Libraries\GitHubHelper;
-use CodeIgniter\Controller;
-use CodeIgniter\HTTP\RequestInterface;
-use CodeIgniter\HTTP\ResponseInterface;
-use CodeIgniter\HTTP\Response;
-use Config\Services;
-use Psr\Log\LoggerInterface;
 
 class BaseController extends Controller
 {
@@ -55,7 +54,7 @@ class BaseController extends Controller
 	}
 
     /**
-     * Render this page
+     * Renders this page
      *
      * @param string $view The view file to render
      *
@@ -90,7 +89,7 @@ class BaseController extends Controller
 	}
 
 	/**
-	 * Build the localized top & bottom navbars
+	 * Builds the localized top & bottom navbars
 	 */
 	private function buildNavbars()
 	{

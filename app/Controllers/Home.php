@@ -1,12 +1,11 @@
 <?php
-namespace App\Controllers;
 
-use CodeIgniter\Controller;
+namespace App\Controllers;
 
 class Home extends BaseController
 {
     /**
-     * Display the home page.
+     * Displays the home page.
      */
 	public function index()
 	{
