@@ -40,7 +40,7 @@ Use these steps to create a local installation for development and testing.
 
 1. Clone the repo: `git clone https://github.com/codeigniter4projects/website2`
 2. Work in the repo directory: `cd website2`
-3.  Make sure the **writable** folder is accessible: `chmod -R 777 writable`
+3. Make sure the **writable** folder is accessible: `chmod -R 777 writable`
 4. Install dependencies: `composer install`
 5. Create your **.env** file: `cp env .env`
 6. Edit **.env** and set at least the following:
