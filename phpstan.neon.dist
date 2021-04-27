@@ -11,8 +11,7 @@ parameters:
 		- app/Config/Routes.php
 		- app/Views/*
 	ignoreErrors:
-		- '#Cannot access property [\$a-z_]+ on (array|object)#'
-		- '#Unsafe usage of new static\(\)*#'
+		- '#Call to an undefined static method Config\\Services::[A-Za-z]+\(\)#'
 	universalObjectCratesClasses:
 		- CodeIgniter\Entity
 		- Faker\Generator

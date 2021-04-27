@@ -28,7 +28,7 @@ class Home extends BaseController
 					? 'https://github.com/codeigniter4/framework/releases/'
 					: 'https://github.com/codeigniter4/framework/archive/' . $this->data['v4name'] . '.zip',
 				'label'	 => lang('Home.block1Title'),
-				'text'	 => lang('Home.block1Desc') . $this->data['v4name'] ?? ''],
+				'text'	 => lang('Home.block1Desc') . ($this->data['v4name'] ?? '')],
 			['icon'	 => 'book',
 				'link'	 => '/user_guide/index.html',
 				'label'	 => lang('Home.block2Title'),

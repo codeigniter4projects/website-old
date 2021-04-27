@@ -113,13 +113,13 @@ class GitHubHelper
     }
 
     /**
-     * build the hit parade for this group of contributors
+     * Build the hit parade for this group of contributors.
      *
-     * @param $info
+     * @param array $info
      *
      * @return string
      */
-    protected function hitparade($info)
+    protected function hitparade(array $info)
     {
         $heros = [];
         if ( ! empty($info))
@@ -142,7 +142,7 @@ class GitHubHelper
     /**
      * determine how many stars a contributor earns
      *
-     * @param $contributions
+     * @param int $contributions
      *
      * @return string
      */

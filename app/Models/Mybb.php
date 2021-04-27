@@ -1,5 +1,9 @@
 <?php
+
 namespace App\Models;
+
+use CodeIgniter\Database\BaseConnection;
+use Config\App;
 
 /**
  * Class Mybb
@@ -11,6 +15,15 @@ namespace App\Models;
  */
 class Mybb // extends \CodeIgniter\Model
 {
+    /**
+     * @var App
+     */
+    protected $config;
+
+    /**
+     * @var BaseConnection|null
+     */
+    protected $db;
 
 	/**
 	 * Are we running in mock mode?
@@ -82,8 +95,9 @@ class Mybb // extends \CodeIgniter\Model
 	 * and visible=1.
 	 *
 	 * @param int $limit Number of the posts to retrieve
-	 * @param str $order Direction to order results by. Either 'asc' or 'desc'
-	 * @return null
+	 * @param string $order Direction to order results by. Either 'asc' or 'desc'
+	 *
+	 * @return array
 	 */
 	public function getRecentNews($limit = 5, $order = 'desc')
 	{
@@ -118,7 +132,8 @@ class Mybb // extends \CodeIgniter\Model
 	 *
 	 * @param int $limit
 	 * @param string $order
-	 * @return null
+	 *
+	 * @return array
 	 */
 	public function getRecentPosts($limit = 5, $order = 'desc')
 	{
