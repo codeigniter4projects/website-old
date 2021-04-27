@@ -54,10 +54,9 @@
                 <div class="well download">
                     <h3 class="text-center">CodeIgniter 3</h3>
 
-                    <p>CodeIgniter <?= esc($v3name) ?> is the legacy version of the framework, intended for use with PHP 5.6+.</p>
+                    <p>CodeIgniter 3 is the legacy version of the framework, intended for use with PHP 5.6+.</p>
 
-                    <p>There have been a number of refinements since version 2, notably with the database,
-                        session handling and encryption. Development of this version is ongoing.</p>
+                    <p>This version is in maintenance, receiving mostly just security updates, and the current version is <?= esc($v3name) ?>.</p>
 
                     <ul class="nav nav-pills justify-content-center">
                         <li class="nav-item" style="margin:0.5em;">
