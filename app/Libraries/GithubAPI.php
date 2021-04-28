@@ -1,7 +1,9 @@
 <?php
 namespace App\Libraries;
 
-use Github;
+use Github\Client;
+use Github\HttpClient\CachedHttpClient;
+use Throwable;
 
 class GithubAPI
 {
@@ -19,34 +21,35 @@ class GithubAPI
 	 * Loads the Github API library with cache enabled by default.
 	 * Returns false on failures.
 	 *
-	 * @uses \Github\Client
+	 * @uses Client
 	 *
 	 * @return void
 	 */
 	public function __construct()
 	{
-		$this->client = new Github\Client(
-				new\Github\HttpClient\CachedHttpClient(array('cache_dir' => '/tmp/github-api-cache'))
-		);
+		$this->client = new Client(new CachedHttpClient([
+			'cache_dir' => '/tmp/github-api-cache',
+		]));
 	}
 
 	/**
 	 * Retrieves extended information about a repository given its username and repository name
 	 *
-	 * @param string    the username
-	 * @param string	the repository name
-	 * @return array    repository information
+	 * @param string $username   the username
+	 * @param string $repository the repository name
+	 *
+	 * @return array|null Repository information
 	 */
-	public function getRepoInfo($username, $repository)
+	public function getRepoInfo($username, $repository): ?array
 	{
 		try
 		{
 			$info = $this->client->api('repo')->show($username, $repository);
 			return ( ! empty($info)) ? $info : FALSE;
 		}
-		catch (Exception $e)
+		catch (Throwable $e)
 		{
-			return FALSE;
+			return null;
 		}
 	}
 
@@ -56,20 +59,21 @@ class GithubAPI
 	 * 
 	 * Use this for CodeIgniter4.
 	 * 
-	 * @param string    the username
-	 * @param string	the repository name
-	 * @return array    releases information
+	 * @param string $username   the username
+	 * @param string $repository the repository name
+	 *
+	 * @return array|null Releases information
 	 */
-	public function getRepoReleases($username, $repository)
+	public function getRepoReleases($username, $repository): ?array
 	{
 		try
 		{
 			$info = $this->client->api('repo')->releases()->all($username, $repository);
 			return ( ! empty($info)) ? $info : FALSE;
 		}
-		catch (Exception $e)
+		catch (Throwable $e)
 		{
-			return FALSE;
+			return null;
 		}
 	}
 
@@ -78,20 +82,21 @@ class GithubAPI
 	 * 
 	 * Use this for CodeIgniter4.
 	 * 
-	 * @param string    the username
-	 * @param string	the repository name
-	 * @return array    releases information
+	 * @param string $username   the username
+	 * @param string $repository the repository name
+	 *
+	 * @return array|null Releases information
 	 */
-	public function getLatestRelease($username, $repository)
+	public function getLatestRelease($username, $repository): ?array
 	{
 		try
 		{
 			$info = $this->client->api('repo')->releases()->all($username, $repository);
 			return ( ! empty($info)) ? $info[0] : FALSE;
 		}
-		catch (Exception $e)
+		catch (Throwable $e)
 		{
-			return FALSE;
+			return null;
 		}
 	}
 
@@ -101,11 +106,12 @@ class GithubAPI
 	 * 
 	 * Use this for CodeIgniter3.
 	 * 
-	 * @param string    the username
-	 * @param string	the repository name
-	 * @return array    releases information
+	 * @param string $username   the username
+	 * @param string $repository the repository name
+	 *
+	 * @return array|null Releases information
 	 */
-	public function getRepoTags($username, $repository)
+	public function getRepoTags($username, $repository): ?array
 	{
 		try
 		{
@@ -116,9 +122,9 @@ class GithubAPI
 					$results[] = $value;
 			return ( ! empty($results)) ? $results : FALSE;
 		}
-		catch (Exception $e)
+		catch (Throwable $e)
 		{
-			return FALSE;
+			return null;
 		}
 	}
 
@@ -127,11 +133,12 @@ class GithubAPI
 	 * 
 	 * Use this for CodeIgniter3.
 	 * 
-	 * @param string    the username
-	 * @param string	the repository name
-	 * @return array    releases information
+	 * @param string $username   the username
+	 * @param string $repository the repository name
+	 *
+	 * @return array|null Releases information
 	 */
-	public function getLatestTag($username, $repository)
+	public function getLatestTag($username, $repository): ?array
 	{
 		try
 		{
@@ -146,29 +153,30 @@ class GithubAPI
 			}
 			return ( ! empty($results)) ? $results[0] : FALSE;
 		}
-		catch (Exception $e)
+		catch (Throwable $e)
 		{
-			return FALSE;
+			return null;
 		}
 	}
 
 	/**
 	 * Retrieves top 12contributors information for a repository given its username and repository name
 	 *
-	 * @param string    the username
-	 * @param string	the repository name
-	 * @return array    contributor information
+	 * @param string $username   the username
+	 * @param string $repository the repository name
+	 *
+	 * @return array|null Contributor information
 	 */
-	public function getContributors($username, $repository)
+	public function getContributors($username, $repository): ?array
 	{
 		try
 		{
 			$info = array_slice($this->client->api('repo')->contributors($username, $repository), 0, 12);
 			return ( ! empty($info)) ? $info : FALSE;
 		}
-		catch (Exception $e)
+		catch (Throwable $e)
 		{
-			return FALSE;
+			return null;
 		}
 	}
 

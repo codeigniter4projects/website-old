@@ -41,7 +41,7 @@ $RECYCLE.BIN/
 #-------------------------
 # These should never be under version control,
 # as it poses a security risk.
-.env*
+.env
 .vagrant
 Vagrantfile
 
@@ -50,6 +50,9 @@ Vagrantfile
 #-------------------------
 writable/cache/*
 !writable/cache/index.html
+
+writable/files/*
+!writable/files/index.html
 
 writable/logs/*
 !writable/logs/index.html
@@ -62,28 +65,27 @@ writable/uploads/*
 
 writable/debugbar/*
 
-php_errors.log
+writable/database.db
 
-#-------------------------
-# User Guide Temp Files
-#-------------------------
-user_guide_src/build/*
-user_guide_src/cilexer/build/*
-user_guide_src/cilexer/dist/*
-user_guide_src/cilexer/pycilexer.egg-info/*
+php_errors.log
+public/error_log
 
 #-------------------------
 # Test Files
 #-------------------------
 tests/coverage*
-
-# Don't save phpunit under version control.
+results/
+build/
+phpunit*.xml
 phpunit
+.phpunit*.cache
+app/Commands/Test.php
 
 #-------------------------
 # Composer
 #-------------------------
 vendor/
+public/assets/vendor/
 
 #-------------------------
 # IDE / Development Files
@@ -121,5 +123,19 @@ nb-configuration.xml
 # Visual Studio Code
 .vscode/
 
-/results/
-/phpunit*.xml
+#-------------------------
+# Local & Sensitive Files
+#-------------------------
+
+/access
+/local
+/public/local
+
+#-------------------------
+# Supplemental Content
+#-------------------------
+
+/public/data/*
+/public/userguide
+/public/user?guide?/*
+!/public/*/readme.rst
