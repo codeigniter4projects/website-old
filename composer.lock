@@ -2327,16 +2327,16 @@
         },
         {
             "name": "nexusphp/tachycardia",
-            "version": "v1.3.0",
+            "version": "v1.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/NexusPHP/tachycardia.git",
-                "reference": "f627c7e335061eb34e9756bf033b7bac1860631a"
+                "reference": "dbedecd2106a8ffa236b9587427e00f6d54b1a63"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/NexusPHP/tachycardia/zipball/f627c7e335061eb34e9756bf033b7bac1860631a",
-                "reference": "f627c7e335061eb34e9756bf033b7bac1860631a",
+                "url": "https://api.github.com/repos/NexusPHP/tachycardia/zipball/dbedecd2106a8ffa236b9587427e00f6d54b1a63",
+                "reference": "dbedecd2106a8ffa236b9587427e00f6d54b1a63",
                 "shasum": ""
             },
             "require": {
@@ -2345,8 +2345,8 @@
                 "phpunit/phpunit": "^9.5"
             },
             "require-dev": {
-                "friendsofphp/php-cs-fixer": "^2.18",
-                "nexusphp/cs-config": "^2.1",
+                "friendsofphp/php-cs-fixer": "^3.0",
+                "nexusphp/cs-config": "^3.0",
                 "phpstan/phpstan": "^0.12.82",
                 "phpstan/phpstan-strict-rules": "^0.12.9"
             },
@@ -2377,20 +2377,20 @@
                 "slack": "https://nexusphp.slack.com",
                 "source": "https://github.com/NexusPHP/tachycardia.git"
             },
-            "time": "2021-04-15T17:26:44+00:00"
+            "time": "2021-05-07T07:27:31+00:00"
         },
         {
             "name": "nikic/php-parser",
-            "version": "v4.10.4",
+            "version": "v4.10.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nikic/PHP-Parser.git",
-                "reference": "c6d052fc58cb876152f89f532b95a8d7907e7f0e"
+                "reference": "4432ba399e47c66624bc73c8c0f811e5c109576f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/c6d052fc58cb876152f89f532b95a8d7907e7f0e",
-                "reference": "c6d052fc58cb876152f89f532b95a8d7907e7f0e",
+                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/4432ba399e47c66624bc73c8c0f811e5c109576f",
+                "reference": "4432ba399e47c66624bc73c8c0f811e5c109576f",
                 "shasum": ""
             },
             "require": {
@@ -2431,9 +2431,9 @@
             ],
             "support": {
                 "issues": "https://github.com/nikic/PHP-Parser/issues",
-                "source": "https://github.com/nikic/PHP-Parser/tree/v4.10.4"
+                "source": "https://github.com/nikic/PHP-Parser/tree/v4.10.5"
             },
-            "time": "2020-12-20T10:01:03+00:00"
+            "time": "2021-05-03T19:11:20+00:00"
         },
         {
             "name": "phar-io/manifest",
