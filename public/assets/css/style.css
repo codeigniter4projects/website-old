@@ -21,9 +21,9 @@
 @font-face {
   font-family: 'Glyphicons Halflings';
   src: url('../fonts/glyphicons-halflings-regular.eot');
-  src: url('../fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), 
-      url('../fonts/glyphicons-halflings-regular.woff') format('woff'), 
-      url('../fonts/glyphicons-halflings-regular.ttf') format('truetype'), 
+  src: url('../fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'),
+      url('../fonts/glyphicons-halflings-regular.woff') format('woff'),
+      url('../fonts/glyphicons-halflings-regular.ttf') format('truetype'),
       url('../fonts/glyphicons-halflings-regular.svg#glyphicons-halflingsregular') format('svg');
 }
 
@@ -238,10 +238,10 @@ a .glyphicon {
     padding: 1em;
     margin-bottom:1em;
 }
-.well hr { 
+.well hr {
     display: block; height: 1px;
     border: 0; border-top: 1px solid #E3E3E3;
-    margin: 1em 0; padding: 0; 
+    margin: 1em 0; padding: 0;
 }
 .well h3 {
     font-size:150%;
@@ -296,7 +296,7 @@ h2, h3 {
    .jumbotron {
         padding-top: 10px;
         padding-bottom: 20px;
-    } 
+    }
 }
 
 /* Twitter widget
@@ -333,7 +333,7 @@ h2, h3 {
    http://www.bootply.com/126437
 --------------------------------------------------*/
 @media (min-width: 992px) {
-    .row-md-flex, .row-md-flex > div[class*='col-'] {  
+    .row-md-flex, .row-md-flex > div[class*='col-'] {
         display: -webkit-box;
         display: -moz-box;
         display: -ms-flexbox;
@@ -369,3 +369,10 @@ h2, h3 {
     white-space: normal;
 }
 
+.disclosure {
+    margin-top: 1rem;
+}
+.disclosure h1{
+    font-size: 20px;
+    margin-top: 0;
+}

@@ -49,7 +49,7 @@
 				<div class="well download">
 					<h3>Slack</h3>
                     <p>CodeIgniter has a Slack channel, where you can engage with other members of the community.
-                        Anyone can <a href="http://codeignitersignup.ciblox.com/">signup</a> for it :)</p>
+                        Anyone can <a href="https://join.slack.com/t/codeigniterchat/shared_invite/zt-rl30zw00-obL1Hr1q1ATvkzVkFp8S0Q">signup</a> for it :)</p>
 
                     <ul class="nav nav-pills justify-content-center">
                         <li class="nav-item" style="margin:0.5em;">

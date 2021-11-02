@@ -1,5 +1,16 @@
 <?php
+
 namespace App\Controllers;
+
+use App\Libraries\GitHubHelper;
+use CodeIgniter\Controller;
+use CodeIgniter\HTTP\Exceptions\HTTPException;
+use CodeIgniter\HTTP\RequestInterface;
+use CodeIgniter\HTTP\ResponseInterface;
+use CodeIgniter\HTTP\Response;
+use Config\App;
+use Config\Services;
+use Psr\Log\LoggerInterface;
 
 /**
  * Class BaseController
@@ -10,23 +21,38 @@ namespace App\Controllers;
  *     class Home extends BaseController
  *
  * For security be sure to declare any new methods as protected or private.
- *
- * @package CodeIgniter
  */
-
-use App\Libraries\GitHubHelper;
-use CodeIgniter\Controller;
-use CodeIgniter\HTTP\RequestInterface;
-use CodeIgniter\HTTP\ResponseInterface;
-use CodeIgniter\HTTP\Response;
-use Config\Services;
-use Psr\Log\LoggerInterface;
 
 class BaseController extends Controller
 {
+    /**
+     * @var App
+     */
+    protected $config;
 
-	protected $data = []; // parameters for view components
-	protected $id;   // identifier for our content
+    /**
+     * @var array
+     */
+    protected $errors;
+
+    /**
+     * Parameters for view components
+     *
+     * @var array
+     */
+	protected $data = [];
+
+    /**
+     * Identifier for our content
+     *
+     * @var mixed
+     */
+	protected $id;
+
+    /**
+     * @var string|null
+     */
+    protected $realUrl;
 
 	/**
 	 * An array of helpers to be loaded automatically upon
@@ -55,16 +81,22 @@ class BaseController extends Controller
 	}
 
     /**
-     * Render this page
+     * Renders this page
      *
      * @param string $view The view file to render
-     *
-     * @return string
      */
 	protected function render(string $view)
 	{
         // URL without the locale
-        $this->realUrl = trim('/' . $this->request->uri->getSegment(2) . '/' . $this->request->uri->getSegment(3), '/ ');
+        try
+        {
+	        $this->realUrl = trim('/' . $this->request->uri->getSegment(2) . '/' . $this->request->uri->getSegment(3), '/ ');
+	    }
+	    catch (HTTPException $e)
+	    {
+	    	$this->realUrl = null;
+	    }
+
         if (empty($this->realUrl))
             $this->realUrl = 'home';
 
@@ -90,9 +122,9 @@ class BaseController extends Controller
 	}
 
 	/**
-	 * Build the localized top & bottom navbars
+	 * Builds the localized top & bottom navbars
 	 */
-	private function buildNavbars()
+	private function buildNavbars(): void
 	{
 		// Massage the menubar
 		$choices = $this->config->menuChoices;
