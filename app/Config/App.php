@@ -27,7 +27,8 @@ class App extends BaseConfig
 		'menudata' => [
 			['name' => 'bottomNav1', 'link' => '/help'],
 			['name' => 'bottomNav2', 'link' => '/help/legal'],
-			['name' => 'bottomNav3', 'link' => '/help/about']
+			['name' => 'bottomNav3', 'link' => '/help/about'],
+			['name' => 'bottomNav4', 'link' => '/security-notices'],
 		]
 	];
 

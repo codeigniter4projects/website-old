@@ -9,4 +9,5 @@ return [
 	'bottomNav1'	 => 'Policies',
 	'bottomNav2'	 => 'The Fine Print',
 	'bottomNav3'	 => 'About',
+	'bottomNav4'	 => 'Security Notices',
 ];

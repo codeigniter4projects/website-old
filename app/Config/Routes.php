@@ -45,6 +45,7 @@ $routes->get('contribute/responsible','Contribute::responsible');
 $routes->get('help','Help::index');
 $routes->get('help/legal','Help::legal');
 $routes->get('help/about','Help::about');
+$routes->get('security-notices','Security::notices');
 
 // localized routes
 $routes->get('{locale}/home','Home::index');
