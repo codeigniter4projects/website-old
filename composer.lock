@@ -2358,16 +2358,16 @@
         },
         {
             "name": "nexusphp/tachycardia",
-            "version": "v1.3.4",
+            "version": "v1.3.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/NexusPHP/tachycardia.git",
-                "reference": "a687cfe10834bd2c6f34acd77bff784feca99e1a"
+                "reference": "b0852c17224e43c34e4ba5d88e57f95cddf5c206"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/NexusPHP/tachycardia/zipball/a687cfe10834bd2c6f34acd77bff784feca99e1a",
-                "reference": "a687cfe10834bd2c6f34acd77bff784feca99e1a",
+                "url": "https://api.github.com/repos/NexusPHP/tachycardia/zipball/b0852c17224e43c34e4ba5d88e57f95cddf5c206",
+                "reference": "b0852c17224e43c34e4ba5d88e57f95cddf5c206",
                 "shasum": ""
             },
             "require": {
@@ -2378,12 +2378,12 @@
             "require-dev": {
                 "friendsofphp/php-cs-fixer": "^3.0",
                 "nexusphp/cs-config": "^3.2",
-                "phpstan/phpstan": "^0.12.82"
+                "phpstan/phpstan": "^1.0"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-develop": "1.x-dev"
+                    "dev-1.x": "1.x-dev"
                 }
             },
             "autoload": {
@@ -2407,7 +2407,13 @@
                 "slack": "https://nexusphp.slack.com",
                 "source": "https://github.com/NexusPHP/tachycardia.git"
             },
-            "time": "2021-06-19T17:59:41+00:00"
+            "funding": [
+                {
+                    "url": "https://www.paypal.me/paulbalandan",
+                    "type": "custom"
+                }
+            ],
+            "time": "2021-11-02T13:24:48+00:00"
         },
         {
             "name": "nikic/php-parser",
@@ -3110,23 +3116,23 @@
         },
         {
             "name": "phpunit/php-code-coverage",
-            "version": "9.2.7",
+            "version": "9.2.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-code-coverage.git",
-                "reference": "d4c798ed8d51506800b441f7a13ecb0f76f12218"
+                "reference": "cf04e88a2e3c56fc1a65488afd493325b4c1bc3e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/d4c798ed8d51506800b441f7a13ecb0f76f12218",
-                "reference": "d4c798ed8d51506800b441f7a13ecb0f76f12218",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/cf04e88a2e3c56fc1a65488afd493325b4c1bc3e",
+                "reference": "cf04e88a2e3c56fc1a65488afd493325b4c1bc3e",
                 "shasum": ""
             },
             "require": {
                 "ext-dom": "*",
                 "ext-libxml": "*",
                 "ext-xmlwriter": "*",
-                "nikic/php-parser": "^4.12.0",
+                "nikic/php-parser": "^4.13.0",
                 "php": ">=7.3",
                 "phpunit/php-file-iterator": "^3.0.3",
                 "phpunit/php-text-template": "^2.0.2",
@@ -3175,7 +3181,7 @@
             ],
             "support": {
                 "issues": "https://github.com/sebastianbergmann/php-code-coverage/issues",
-                "source": "https://github.com/sebastianbergmann/php-code-coverage/tree/9.2.7"
+                "source": "https://github.com/sebastianbergmann/php-code-coverage/tree/9.2.8"
             },
             "funding": [
                 {
@@ -3183,7 +3189,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2021-09-17T05:39:03+00:00"
+            "time": "2021-10-30T08:01:38+00:00"
         },
         {
             "name": "phpunit/php-file-iterator",
