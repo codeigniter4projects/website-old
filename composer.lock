@@ -8,16 +8,16 @@
     "packages": [
         {
             "name": "codeigniter4/framework",
-            "version": "v4.1.4",
+            "version": "v4.1.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/codeigniter4/framework.git",
-                "reference": "b0868b9aa9c52ce5bd51033d18e6c72f8e4ffa91"
+                "reference": "27eb447205ebcef68055b12f3bec9b945cc034e4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/codeigniter4/framework/zipball/b0868b9aa9c52ce5bd51033d18e6c72f8e4ffa91",
-                "reference": "b0868b9aa9c52ce5bd51033d18e6c72f8e4ffa91",
+                "url": "https://api.github.com/repos/codeigniter4/framework/zipball/27eb447205ebcef68055b12f3bec9b945cc034e4",
+                "reference": "27eb447205ebcef68055b12f3bec9b945cc034e4",
                 "shasum": ""
             },
             "require": {
@@ -26,7 +26,7 @@
                 "ext-json": "*",
                 "ext-mbstring": "*",
                 "kint-php/kint": "^3.3",
-                "laminas/laminas-escaper": "^2.8",
+                "laminas/laminas-escaper": "^2.9",
                 "php": "^7.3 || ^8.0",
                 "psr/log": "^1.1"
             },
@@ -62,7 +62,7 @@
                 "slack": "https://codeigniterchat.slack.com",
                 "source": "https://github.com/codeigniter4/CodeIgniter4"
             },
-            "time": "2021-09-07T01:20:26+00:00"
+            "time": "2021-11-08T15:09:23+00:00"
         },
         {
             "name": "guzzle/guzzle",
