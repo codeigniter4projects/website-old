@@ -11,7 +11,7 @@
 	"require": {
 		"php": "^7.3 || ^8.0",
 		"codeigniter4/framework": "^4",
-		"knplabs/github-api": "^1.5",
+		"knplabs/github-api": "^3.6",
 		"symfony/event-dispatcher": "^5.2"
 	},
 	"require-dev": {
